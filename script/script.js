@@ -245,83 +245,51 @@ listCategories.addEventListener("click", function addEvent(e) {
 
 //carousel items
 
+let l=0;
+  
+function right_mover(movePer,maxMove,product){
+    let mob_view = window.matchMedia("(max-width: 768px)");
+	if (mob_view.matches)
+	 {
+	 	movePer *= 2;
+	 	maxMove *= 2;
+	 }
+    l = l + movePer;
+    if (product == 1){l = 0; }
+    for(const i of product)
+    {
+        if (l > maxMove){l = l - movePer;}
+        i.style.left = '-' + l + '%';
+    }
+    
+}
+
+function left_mover (movePer,product){
+    let mob_view = window.matchMedia("(max-width: 768px)");
+	if (mob_view.matches)
+	 {
+        movePer *= 2;
+      
+	 }
+    let product_page = Math.ceil(product.length/4);
+    l = l - movePer;
+    if (l<=0){l = 0;}
+    for(const i of product){
+        if (product_page>1){
+            i.style.left = '-' + l + '%';
+        }
+    }
+}
+
 
 let btnsdeal = document.querySelectorAll(".dealarr");
-
-	let product = document.getElementsByClassName('deal-item');
-	let product_page = Math.ceil(product.length/4);
- 
-	let l = 0;
-	let movePer = 100;
-	let maxMove = 200;
-	// mobile_view	
-	// let mob_view = window.matchMedia("(max-width: 768px)");
-	// if (mob_view.matches)
-	//  {
-	//  	movePer = 100;
-	//  	maxMove = 501;
-	//  }
-//
+let product = document.getElementsByClassName('deal-item');
+btnsdeal[0].addEventListener("click",function(){left_mover(100,product)});
+btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
   
-	function right_mover(){
-		l = l + movePer;
-		if (product == 1){l = 0; }
-		for(const i of product)
-		{
-			if (l > maxMove){l = l - movePer;}
-			i.style.left = '-' + l + '%';
-		}
 
-	}
-	function left_mover (){
-		l = l - movePer;
-		if (l<=0){l = 0;}
-		for(const i of product){
-			if (product_page>1){
-				i.style.left = '-' + l + '%';
-			}
-		}
-	}
-
-  btnsdeal[0].addEventListener("click",left_mover);
-  btnsdeal[1].addEventListener("click",right_mover);
-  
-  
   //
  let btnsblog=document.querySelectorAll(".arrow-blog");
  let blogproduct= document.getElementsByClassName('container-blog');
- let productblog_page = Math.ceil(blogproduct.length/3);
-
- 
-	let movePer1 = 33;
-	let maxMove1 = 67;
- function right_moverr (){
-  l = l + movePer1;
-  if (blogproduct == 1){l = 0; }
-  for(const i of blogproduct)
-  {
-    if (l > maxMove1){l = l - movePer1;}
-    i.style.left = '-' + l + '%';
-  }
-
-}
-function left_moverr (){
-  l = l - movePer1;
-  if (l<=0){l = 0;}
-  for(const i of blogproduct){
-    if (productblog_page>1){
-      i.style.left = '-' + l + '%';
-    }
-  }
-}
- 
-
- btnsblog[0].addEventListener("click",left_moverr);
-
- btnsblog[1].addEventListener("click",right_moverr);
-
- 
-
-
-
-
+ btnsblog[0].addEventListener("click",function(){left_mover(33,blogproduct)});
+ btnsblog[1].addEventListener("click",function(){right_mover(33,67,blogproduct)});

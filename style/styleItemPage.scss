@@ -1,0 +1,162 @@
+@import url("./style.css");
+@import url("./styleShop.css");
+$font-principal: "Prata", serif;
+$font-secundar: "Rubik", sans-serif;
+$color1: #5a5a5a;
+$color2: #a7752a;
+$color3: #a8741a;
+$colorc: #b09d7b;
+.page-title {
+	padding: 50px 0 50px 0;
+	font-size: 13px;
+	a {
+		text-decoration: none;
+		color: black;
+		&:hover {
+			color: $colorc;
+		}
+	}
+	span {
+	}
+}
+.itempage {
+	.top-side-item {
+		padding-top: 40px;
+		display: flex;
+		.left-side {
+			flex: 0.9;
+			img {
+				width: 20%;
+			}
+			#featured {
+				position: relative;
+				width: 100%;
+				height: auto;
+			}
+			.thumbnail-container {
+				position: relative;
+				display: flex;
+				overflow-x: hidden;
+				padding: 0 20px 0 20px;
+				.thumbnail {
+					transition: 1s;
+					position: relative;
+					width: 25%;
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+				.activated-img {
+				}
+				#arrow-item {
+					position: absolute;
+					opacity: 0.4;
+					top: 40%;
+
+					// top: 10px;
+					// left: -20px;
+					&:first-of-type {
+						transform: rotate(180deg);
+						left: 0px;
+					}
+					&:last-of-type {
+						right: 0px;
+					}
+				}
+			}
+		}
+		.right-side {
+			flex: 1.1;
+			.title-item {
+				font-size: 24px;
+				margin-bottom: 20px;
+			}
+			.price {
+				font-size: 28px;
+				margin: 10px 0px;
+				font-weight: bold;
+				.price-discount {
+					font-size: 22px;
+					color: #b2b2b2;
+					text-decoration: line-through;
+				}
+			}
+			.small-description {
+				font-size: 15px;
+				color: #838383;
+			}
+			.stock {
+				font-weight: bold;
+				font-size: 16px;
+				color: #43c343;
+				margin: 10px 0px;
+				.stock-span {
+				}
+			}
+
+			form {
+				margin: 30px 0px;
+				label {
+					font-size: 15px;
+				}
+				input {
+					border-radius: 5px;
+					font-size: 16px;
+					border: 1px solid #ebebeb;
+					width: 54px;
+					height: 45px;
+					display: inline;
+					padding: 8px;
+					margin: 0 3px;
+					text-align: center;
+					vertical-align: top;
+					&::-webkit-outer-spin-button,
+					&::-webkit-inner-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+				}
+				button {
+					padding: 12px 21px 13px;
+					// transition: 1s;
+					background-color: $colorc;
+					color: white;
+					font-weight: bold;
+					border: none;
+					border-radius: 50px;
+					cursor: pointer;
+					&:hover {
+						animation: feat 0.5s ease-in-out;
+						background-color: #515151;
+						@keyframes feat {
+							30% {
+								transform: rotate(2deg);
+							}
+							70% {
+								transform: rotate(-2deg);
+							}
+						}
+					}
+				}
+			}
+			.sku {
+				margin: 10px 0px;
+				font-size: 15px;
+				.sku-span {
+					color: #808080;
+				}
+			}
+			.categories-item {
+				margin: 10px 0px;
+				font-size: 15px;
+				.categories-item-span {
+					color: #808080;
+					cursor: pointer;
+					&:hover {
+						color: $colorc;
+					}
+				}
+			}
+		}
+	}
+}

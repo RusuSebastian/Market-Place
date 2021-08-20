@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&family=Rubik:wght@300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style/style.css">
-
+    <link rel="stylesheet" href="./style/styleItemPage.css">
 
 </head>
 
@@ -68,12 +67,11 @@
                 </div>
             </div>
 
-
-
             <div class="header-bottom margin">
                 <div class="categories-button">
                     <p><i class="fas fa-bars"></i>
                         ALL CATEGORIES</p>
+
                     <div class="dropdown-content-categories" id="allCategories">
                         <a href="" class="categories">Coffee Bean</a>
                         <a href="" class="categories">Machines</a>
@@ -88,7 +86,7 @@
                     <ul>
                         <li><a href="" id="navbar">HOME</a></li>
                         <li class="drop">
-                            <a href="./shop.html" class="sale" id="navbar">SHOP</a>
+                            <a href="" class="sale " id="navbar">SHOP</a>
                             <div class="navbar-dropdown">
                                 <a href="" class="nav-item">Product categories</a>
                                 <a href="" class="nav-item">Top rated products</a>
@@ -96,7 +94,7 @@
                         </li>
                         <li><a href="" id="navbar">BLOG</a></li>
                         <li class="drop">
-                            <a href="" class="sale hot" id="navbar">FEATURES</a>
+                            <a href="" class="sale hot " id="navbar">FEATURES</a>
                             <div class="navbar-dropdown">
                                 <a href="" class="nav-item">FAQ</a>
                                 <a href="" class="nav-item">Site map</a>
@@ -109,29 +107,51 @@
         </div>
     </header>
 
-    <section class="slider margin">
-        <div class="arrow-left arrow"></div>
-        <div class="arrow-right arrow"></div>
-        <div class="carousel">
-            <div class="image-slide main">
-                <h1>Real Test</h1>
-                <h2>Premium Quality</h2>
-                <p>Lorem ipsum dolor sit ametm dolor sit </p>
-                <button>VIEW MORE</button>
+    <section class="page-title margin">
+        
+        <a href="">Home</a> <a href="">/ Type</a> <span>/ Item name</span>
+    </section>
+
+    <section class="itempage margin">
+        <div class="top-side-item">
+            <div class="left-side">
+                
+                <img src="./photos/items/coffee1.jpg" alt="" id="featured">
+                <div class="thumbnail-container">
+                    <img src="./photos/items/coffee1.jpg" alt="" class="thumbnail activated-img">
+                    <img src="./photos/items/coffee2.jpg" alt="" class="thumbnail">
+                    <img src="./photos/items/coffee3.jpg" alt="" class="thumbnail">
+                    <img src="./photos/items/coffee4.jpg" alt="" class="thumbnail">
+                    <img src="./photos/items/coffee5.jpg" alt="" class="thumbnail">
+                    <img src="./photos/items/coffee3.jpg" alt="" class="thumbnail">
+                    <img src="./photos/items/coffee5.jpg" alt="" class="thumbnail">
+                    <div class="arrow" id="arrow-item"></div>
+                    <div class="arrow" id="arrow-item"></div>
+                </div>
+                
             </div>
-            <div class="image-slide item">
-                <h1>Real Espresso</h1>
-                <h2>Premium Quality</h2>
-                <p>Lorem ipsum dolor sit ametm dolor sit2</p>
-                <button>VIEW MORE2</button>
+            <div class="right-side">
+                <h2 class="title-item">Awabox Full Sleeves Strip Tshirt</h2>
+                <p class="price">$98.00 <span class="price-discount">$115.00</span></p>
+                <p class="small-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat magni rerum quas sunt deserunt quam minus dolorem esse. Esse quam officia distinctio atque. Possimus quidem enim nam voluptatum placeat.</p>
+                <p class="stock"><span class="stock-span">98 </span>in stock</p>
+                <form action="" class="Qty-add-cart">
+                    <label for="qty">Qty:</label>
+                    <input type="number" name="qty" id="qty" min="1" step="1" max="95"
+                    value="1" inputmode="numeric" pattern="[0-9]" >
+                    <button type="submit">ADD TO CART</button>
+                </form>
+                <p class="sku">SKU:<span class="sku-span"> NHFL5</span></p>
+                <p class="categories-item">Categories:<span class="categories-item-span">Coffee Board</span>,<span class="categories-item-span">Excels Coffee</span></p>
             </div>
         </div>
-
     </section>
+ 
+
 
     <section class="deals margin">
         <div class="top-deal">
-            <h3>DEAL OF THIS DAY</h3>
+            <h3>RELATED PRODUCTS</h3>
             <div class="arrows">
                 <div class="arrow arrow-deal-left dealarr"></div>
                 <div class="arrow arrow-deal-right dealarr"></div>
@@ -233,94 +253,6 @@
             </div>
         </div>
     </section>
-
-
-    <section class="ads margin">
-        <div class="ad one">
-            <div class="mask"></div>
-            <h1>Ordinary <br> Coffee & Puffs</h1>
-            <a href="">View More</a>
-        </div>
-        <div class="ad two">
-            <div class="mask"></div>
-            <h1>Espresso Bean <br> Love It!!</h1>
-            <a href="">View More</a>
-        </div>
-    </section>
-
-    <section class="shop-by-categ margin">
-        <div class="title">
-            <h3>SHOP BY CATEGORIES</h3>
-            <a href="">VIEW ALL CATEGORIES</a>
-        </div>
-        <div class="categ-items">
-            <div class="categories">
-                <ul class="type-categories">
-                    <li class="active">Coffee Bean</li>
-                    <li>Machines</li>
-                    <li>Cup and Glass</li>
-                    <li>Health & Safety</li>
-                    <li>Varieties</li>
-                    <li>Excels Coffee</li>
-                </ul>
-            </div>
-            <div class="categories-items">
-                <!-- <div class="product-item" onmouseover="hover(this,1);" onmouseout="unhover(this,2);">
-                    <img id="my-img" src="./photos/items/coffee2.jpg" />
-                    <div class="product-info">
-                        <p class="info">Sky Blue Designer Pink Longue Tub</p>
-                        <p class="price">&#36 100.00
-                            <span class="old-price">&#36 180.00</span>
-                            <span class="discount">-44%</span>
-                        </p>
-                        <div class="product-btns">
-                            <a class="cart" href=""></a>
-                            <a class="view-modal" href=""></a>
-                            <a class="wishlist" href=""></a>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <section class="blogs margin">
-        <div class="top-blogs">
-            <h3>FROM THE BLOGS</h3>
-            <div class="arrows">
-                <div class="arrow arrow-blog"></div>
-                <div class="arrow arrow-blog"></div>
-            </div>
-        </div>
-        <div class="bot-blogs">
-            <div class="container-blog">
-                <img src="./photos/blog/blog1.jpg" alt="">
-                <p>11 July, 2011</p>
-                <a href="">The coffee fan to make better coffee at home</a>
-            </div>
-            <div class="container-blog">
-                <img src="./photos/blog/blog2.jpg" alt="">
-                <p>12 July, 2012</p>
-                <a href="">The coffee fan to make better coffee at home</a>
-            </div>
-            <div class="container-blog">
-                <img src="./photos/blog/blog3.jpg" alt="">
-                <p>13 July, 2013</p>
-                <a href="">The coffee fan to make better coffee at home</a>
-            </div>
-            <div class="container-blog">
-                <img src="./photos/blog/blog3.jpg" alt="">
-                <p>14 July, 2014</p>
-                <a href="">The coffee fan to make better coffee at home</a>
-            </div>
-            <div class="container-blog">
-                <img src="./photos/blog/blog3.jpg" alt="">
-                <p>15 July, 2015</p>
-                <a href="">The coffee fan to make better coffee at home</a>
-            </div>
-        </div>
-    </section>
-
     <section class="cards margin">
         <div class="card">
             <div class="circle">
@@ -359,10 +291,7 @@
             </div>
         </div>
     </section>
-
     <footer class="margin">
-
-        
         <div class="main-footer">
             <div class="first-box">
                 <div class="logo">
@@ -407,7 +336,7 @@
         </div>
     </footer>
 
-    <script src="./script/script.js"></script>
+    <script src="./script/scriptItem.js"></script>
 </body>
 
 </html>

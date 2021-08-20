@@ -1,0 +1,197 @@
+@import url("./style.css");
+@import url("./styleShop.css");
+.page-title {
+  padding: 50px 0 50px 0;
+  font-size: 13px;
+}
+
+.page-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.page-title a:hover {
+  color: #b09d7b;
+}
+
+.itempage .top-side-item {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.itempage .top-side-item .left-side {
+  -webkit-box-flex: 0.9;
+      -ms-flex: 0.9;
+          flex: 0.9;
+}
+
+.itempage .top-side-item .left-side img {
+  width: 20%;
+}
+
+.itempage .top-side-item .left-side #featured {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  padding: 0 20px 0 20px;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container .thumbnail {
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+  width: 25%;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container .thumbnail:hover {
+  opacity: 0.8;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container #arrow-item {
+  position: absolute;
+  opacity: 0.4;
+  top: 40%;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container #arrow-item:first-of-type {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: 0px;
+}
+
+.itempage .top-side-item .left-side .thumbnail-container #arrow-item:last-of-type {
+  right: 0px;
+}
+
+.itempage .top-side-item .right-side {
+  -webkit-box-flex: 1.1;
+      -ms-flex: 1.1;
+          flex: 1.1;
+}
+
+.itempage .top-side-item .right-side .title-item {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.itempage .top-side-item .right-side .price {
+  font-size: 28px;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+
+.itempage .top-side-item .right-side .price .price-discount {
+  font-size: 22px;
+  color: #b2b2b2;
+  text-decoration: line-through;
+}
+
+.itempage .top-side-item .right-side .small-description {
+  font-size: 15px;
+  color: #838383;
+}
+
+.itempage .top-side-item .right-side .stock {
+  font-weight: bold;
+  font-size: 16px;
+  color: #43c343;
+  margin: 10px 0px;
+}
+
+.itempage .top-side-item .right-side form {
+  margin: 30px 0px;
+}
+
+.itempage .top-side-item .right-side form label {
+  font-size: 15px;
+}
+
+.itempage .top-side-item .right-side form input {
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid #ebebeb;
+  width: 54px;
+  height: 45px;
+  display: inline;
+  padding: 8px;
+  margin: 0 3px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.itempage .top-side-item .right-side form input::-webkit-outer-spin-button, .itempage .top-side-item .right-side form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.itempage .top-side-item .right-side form button {
+  padding: 12px 21px 13px;
+  background-color: #b09d7b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.itempage .top-side-item .right-side form button:hover {
+  -webkit-animation: feat 0.5s ease-in-out;
+          animation: feat 0.5s ease-in-out;
+  background-color: #515151;
+}
+
+@-webkit-keyframes feat {
+  30% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  70% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+
+@keyframes feat {
+  30% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  70% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+
+.itempage .top-side-item .right-side .sku {
+  margin: 10px 0px;
+  font-size: 15px;
+}
+
+.itempage .top-side-item .right-side .sku .sku-span {
+  color: #808080;
+}
+
+.itempage .top-side-item .right-side .categories-item {
+  margin: 10px 0px;
+  font-size: 15px;
+}
+
+.itempage .top-side-item .right-side .categories-item .categories-item-span {
+  color: #808080;
+  cursor: pointer;
+}
+
+.itempage .top-side-item .right-side .categories-item .categories-item-span:hover {
+  color: #b09d7b;
+}
+/*# sourceMappingURL=styleItemPage.css.map */
