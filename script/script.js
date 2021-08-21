@@ -158,8 +158,8 @@ const items = [
 
 console.log(items[8].type);
 const categItms = document.querySelector(".categories-items");
-
-function showItems(type) {
+const dealItms=document.querySelector(".inner-bot");
+function showItems(type,location) {
   for (const item of items) {
     if (item.type.includes(type)) {
       const product = document.createElement("div");
@@ -170,7 +170,7 @@ function showItems(type) {
       product.onmouseout = function () {
         imgProduct.src = item.url;
       };
-      categItms.appendChild(product);
+      location.appendChild(product);
       const imgProduct = document.createElement("img");
       imgProduct.setAttribute("id", "my-img");
       imgProduct.src = item.url;
@@ -211,19 +211,20 @@ function showItems(type) {
       const productBtns = document.createElement("div");
       productBtns.classList.add("product-btns");
       productInfo.appendChild(productBtns);
-      const cart = document.createElement("a");
+      const cart = document.createElement("button");
       cart.classList.add("cart");
       productBtns.appendChild(cart);
-      const view = document.createElement("a");
+      const view = document.createElement("button");
       view.classList.add("view-modal");
       productBtns.appendChild(view);
-      const wish = document.createElement("a");
+      const wish = document.createElement("button");
       wish.classList.add("wishlist");
       productBtns.appendChild(wish);
     }
   }
 };
-showItems("Coffee Bean");
+showItems("Coffee Bean",categItms);
+showItems("Coffee Bean",dealItms);
 
 
 //shopcateg
@@ -232,7 +233,7 @@ const listCategories = document.querySelector(".type-categories");
 console.log(listCategories.children);
 listCategories.addEventListener("click", function addEvent(e) {
   categItms.innerHTML = "";
-  showItems(e.target.innerText);
+  showItems(e.target.innerText,categItms);
 
   for (const li of listCategories.children) {
     li.classList.remove("active");
@@ -283,7 +284,7 @@ function left_mover (movePer,product){
 
 
 let btnsdeal = document.querySelectorAll(".dealarr");
-let product = document.getElementsByClassName('deal-item');
+let product = document.getElementsByClassName('product-item');
 btnsdeal[0].addEventListener("click",function(){left_mover(100,product)});
 btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
   
