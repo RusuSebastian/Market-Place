@@ -1059,6 +1059,7 @@ body {
 }
 
 .product-item .product-info .info {
+  cursor: pointer;
   margin: 10px 0px;
 }
 
@@ -1121,6 +1122,17 @@ body {
 .product-item .product-info .product-btns .view-modal:hover,
 .product-item .product-info .product-btns .wishlist:hover {
   background-color: #333;
+}
+
+.product-item .product-info .product-btns .cart img,
+.product-item .product-info .product-btns .view-modal img,
+.product-item .product-info .product-btns .wishlist img {
+  height: 45%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .product-item:hover .product-btns {

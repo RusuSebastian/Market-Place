@@ -225,15 +225,29 @@ function showItems() {
       const productBtns = document.createElement("div");
       productBtns.classList.add("product-btns");
       productInfo.appendChild(productBtns);
-      const cart = document.createElement("a");
+      const cart = document.createElement("div");
       cart.classList.add("cart");
       productBtns.appendChild(cart);
-      const view = document.createElement("a");
+
+      const cartImg=document.createElement("img");
+      cartImg.src="./photos/item-hover/shopping-basket.svg";
+      cart.appendChild(cartImg);
+
+      const view = document.createElement("button");
       view.classList.add("view-modal");
       productBtns.appendChild(view);
-      const wish = document.createElement("a");
+
+      const viewImg=document.createElement("img");
+      viewImg.src="./photos/item-hover/eye.svg";
+      view.appendChild(viewImg);
+
+      const wish = document.createElement("button");
       wish.classList.add("wishlist");
       productBtns.appendChild(wish);
+
+      const wishImg=document.createElement("img");
+      wishImg.src="./photos/item-hover/heart.svg";
+      wish.appendChild(wishImg);
     }
   
 };

@@ -788,6 +788,7 @@ body {
 	.product-info {
 		position: relative;
 		.info {
+			cursor: pointer;
 			margin: 10px 0px;
 			&:hover {
 				color: $colorc;
@@ -835,6 +836,13 @@ body {
 				background-color: $colorc;
 				&:hover {
 					background-color: #333;
+				}
+				img {
+					height: 45%;
+					position: relative;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
 				}
 			}
 		}
