@@ -41,7 +41,7 @@ function windowClicked (buttonClass,dropdown){
 let thumbnails=document.getElementsByClassName("thumbnail");
 let activeImages=document.getElementsByClassName("active");
 
-console.log(thumbnails);
+
 
 for(const thumbnail of thumbnails){
     thumbnail.addEventListener("click",function(){
@@ -100,14 +100,31 @@ let thumbnailContainer= document.getElementsByClassName('thumbnail');
 btnsitm[0].addEventListener("click",function(){left_mover(25,thumbnailContainer)});
 btnsitm[1].addEventListener("click",function(){right_mover(25,99,thumbnailContainer)});
 
-
 //
-
-
-
-
 let btnsdeal = document.querySelectorAll(".dealarr");
 let product = document.getElementsByClassName('deal-item');
 btnsdeal[0].addEventListener("click",function(){left_mover(100,product)});
 btnsdeal[1].addEventListener("click", function(){right_mover(100,200,product)});
+//
+
+
+const tab=document.querySelector(".tabs");
+const descContainer=document.querySelector(".descrip-container");
+const addiContainer=document.querySelector(".additional-info");
+
+tab.addEventListener("click", function(e){
   
+  for(const btn of tab.children){
+    btn.classList.remove("btnactiv");
+  }
+  e.target.classList.add("btnactiv");
+   if(e.target.classList[0]==="descrip"){
+    descContainer.style.display="block";
+    addiContainer.style.display="none";
+  }else if(e.target.classList[0]==="additional"){
+    descContainer.style.display="none";
+    addiContainer.style.display="block";
+  }
+  
+})
+

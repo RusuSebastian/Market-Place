@@ -194,4 +194,131 @@
 .itempage .top-side-item .right-side .categories-item .categories-item-span:hover {
   color: #b09d7b;
 }
+
+.description-info .tabs {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.description-info .tabs button {
+  padding: 12px 25px;
+  background-color: #b09d7b;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.description-info .tabs button:hover {
+  background-color: #333333;
+}
+
+.description-info .tabs .btnactiv {
+  background-color: #333333;
+}
+
+.description-info .tabs .descrip {
+  margin-right: 20px;
+}
+
+.description-info .descrip-container {
+  margin-top: 30px;
+  line-height: 30px;
+  background-color: #f2f2f2;
+  padding: 34px;
+  border-radius: 5px;
+  -webkit-animation: zoom 0.5s;
+          animation: zoom 0.5s;
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.description-info .descrip-container h5 strong {
+  font-size: 14px;
+}
+
+.description-info .descrip-container p {
+  font-size: 13px;
+  color: #838383;
+  margin-bottom: 15px;
+}
+
+.description-info .descrip-container li {
+  font-size: 13px;
+  color: #838383;
+}
+
+.description-info .descrip-container ul,
+.description-info .descrip-container ol {
+  margin: 0 0 24px 15px;
+}
+
+.description-info .additional-info {
+  margin-top: 30px;
+  line-height: 30px;
+  padding: 34px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  -webkit-animation: zoom 0.5s;
+          animation: zoom 0.5s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.description-info .additional-info table tbody {
+  background-color: white;
+}
+
+.description-info .additional-info table tbody tr th {
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.description-info .additional-info table tbody tr td {
+  background-color: white;
+  padding: 8px;
+  color: #838383;
+  font-size: 12px;
+  width: 100%;
+}
+
+.deals {
+  margin-top: 30px;
+}
 /*# sourceMappingURL=styleItemPage.css.map */
