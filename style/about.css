@@ -11,6 +11,14 @@ body.dark .numbers-container .counter::after {
   background-color: white !important;
 }
 
+body.dark svg {
+  fill: white !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .about-us {
   margin-top: 35px;
   margin-bottom: 35px;
@@ -135,14 +143,20 @@ body.dark .numbers-container .counter::after {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  position: relative;
+  left: 0%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .testimonials .testimonial {
   text-align: center;
   line-height: 24px;
+  position: relative;
 }
 
-.testimonials .testimonial img {
+.testimonials .testimonial svg {
   width: 65px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -154,6 +168,7 @@ body.dark .numbers-container .counter::after {
   font-size: 13px;
   font-style: italic;
   margin-bottom: 15px;
+  padding: 0 20%;
 }
 
 .testimonials .testimonial h5 {

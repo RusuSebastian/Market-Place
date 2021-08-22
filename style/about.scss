@@ -17,6 +17,12 @@ body.dark {
 			background-color: white !important;
 		}
 	}
+	svg {
+		fill: white !important;
+	}
+}
+body {
+	overflow-x: hidden;
 }
 .about-us {
 	margin-top: 35px;
@@ -109,11 +115,16 @@ body.dark {
 	width: 300%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	overflow: hidden;
+	position: relative;
+	left: 0%;
+	transition: 0.5s;
 	.testimonial {
 		text-align: center;
 		line-height: 24px;
+		position: relative;
 
-		img {
+		svg {
 			width: 65px;
 			transform: rotate(180deg);
 			margin-bottom: 15px;
@@ -123,7 +134,7 @@ body.dark {
 			font-size: 13px;
 			font-style: italic;
 			margin-bottom: 15px;
-			// padding: 0 10%;
+			padding: 0 20%;
 		}
 		h5 {
 			color: $colorc;
