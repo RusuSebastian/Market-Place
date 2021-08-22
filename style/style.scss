@@ -148,8 +148,7 @@ body {
 	}
 	.search-Bar {
 		form {
-			overflow: hidden;
-			width: auto;
+			// width: auto;
 			border: 2px solid #ebebeb;
 			border-radius: 50px;
 			overflow: hidden;
@@ -164,20 +163,25 @@ body {
 			input {
 				padding: 16px;
 				border: none;
-				width: 25vw;
+				width: 50%;
+
 				margin-left: 3px;
 			}
-			input:last-of-type {
+			button {
 				border-radius: 0 50px 50px 0;
-				background-image: url("../photos/noun_Search_4154406.svg");
-				background-attachment: scroll;
-				background-repeat: no-repeat;
-				background-position: center;
+				border: none;
 				cursor: pointer;
 				background-color: white;
 				background-size: 24px;
 				width: 50px;
 				margin: 0px;
+				position: relative;
+				img {
+					position: absolute;
+					top: 55%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
 			}
 		}
 	}
@@ -252,9 +256,12 @@ body {
 				a {
 					text-decoration: none;
 					color: black;
+					font-size: 14px;
+					font-weight: 600;
 				}
 				.navbar-dropdown {
 					// display: none;
+
 					top: 100%;
 					position: absolute;
 					z-index: 22323;
@@ -269,6 +276,7 @@ body {
 					.nav-item {
 						display: block;
 						padding: 6px 12px 6px 20px;
+						font-weight: 200;
 					}
 				}
 			}
