@@ -1,5 +1,9 @@
 @import url("./style.css");
 @import url("./styleShop.css");
+body.dark #Layer_1 {
+  fill: white;
+}
+
 .top-faq {
   border-bottom: 1px solid #e6e6e6;
   margin-top: 60px;

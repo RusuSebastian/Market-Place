@@ -1,5 +1,30 @@
 @import url("./style.css");
 @import url("./styleShop.css");
+body.dark h2,
+body.dark label {
+  color: white;
+}
+
+body.dark p.stock {
+  color: #43c343 !important;
+}
+
+body.dark .descrip-container {
+  background-color: #1c1c1c;
+}
+
+body.dark .right-side {
+  padding: 20px;
+}
+
+body.dark .arrow:first-of-type {
+  left: 20px !important;
+}
+
+body.dark .arrow:last-of-type {
+  right: 20px !important;
+}
+
 .page-title {
   padding: 50px 0 50px 0;
   font-size: 13px;

@@ -6,7 +6,11 @@ $color1: #5a5a5a;
 $color2: #a7752a;
 $color3: #a8741a;
 $colorc: #b09d7b;
-
+body.dark {
+	#Layer_1 {
+		fill: white;
+	}
+}
 .top-faq {
 	border-bottom: 1px solid #e6e6e6;
 	margin-top: 60px;

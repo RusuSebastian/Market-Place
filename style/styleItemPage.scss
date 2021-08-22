@@ -6,6 +6,28 @@ $color1: #5a5a5a;
 $color2: #a7752a;
 $color3: #a8741a;
 $colorc: #b09d7b;
+
+body.dark {
+	h2,
+	label {
+		color: white;
+	}
+	p.stock {
+		color: #43c343 !important;
+	}
+	.descrip-container {
+		background-color: #1c1c1c;
+	}
+	.right-side {
+		padding: 20px;
+	}
+	.arrow:first-of-type {
+		left: 20px !important;
+	}
+	.arrow:last-of-type {
+		right: 20px !important;
+	}
+}
 .page-title {
 	padding: 50px 0 50px 0;
 	font-size: 13px;

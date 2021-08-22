@@ -7,7 +7,17 @@ $color3: #a8741a;
 $colorc: #b09d7b;
 $gray: #838383;
 $linehei: 24px;
-
+body.dark {
+	.numbers-container {
+		background: #1c1c1c;
+		h4 {
+			color: white;
+		}
+		.counter::after {
+			background-color: white !important;
+		}
+	}
+}
 .about-us {
 	margin-top: 35px;
 	margin-bottom: 35px;

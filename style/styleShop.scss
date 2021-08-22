@@ -5,6 +5,21 @@ $color1: #5a5a5a;
 $color2: #a7752a;
 $color3: #a8741a;
 $colorc: #b09d7b;
+
+body.dark {
+	.page-title {
+		background-color: #1c1c1c;
+	}
+	h1 {
+		color: white;
+	}
+	.row {
+		a {
+			color: black !important;
+		}
+	}
+}
+
 .page-title {
 	background: #f2f2f2;
 	text-align: center;

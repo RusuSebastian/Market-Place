@@ -1,3 +1,9 @@
+const chk = document.getElementById('chk');
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
+
+
 const items = [
   {
     type: ["Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],

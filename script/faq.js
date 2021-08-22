@@ -1,3 +1,8 @@
+const chk = document.getElementById('chk');
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
+
 const questAns=[...document.querySelectorAll(".quest-ans")];
 
 questAns.forEach((ans)=>{

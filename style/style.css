@@ -36,6 +36,36 @@ body {
   letter-spacing: 0.8px;
 }
 
+body.dark {
+  background-clip: padding-box;
+  background-color: #242424;
+}
+
+body.dark p,
+body.dark a,
+body.dark h3,
+body.dark h5,
+body.dark li,
+body.dark span {
+  color: white !important;
+}
+
+body.dark footer,
+body.dark .header-top {
+  background-image: none;
+  background-color: #242424;
+}
+
+body.dark form,
+body.dark input {
+  border: none !important;
+}
+
+body.dark a.categories,
+body.dark a.nav-item {
+  color: black !important;
+}
+
 .button-up-page {
   display: none;
   cursor: pointer;
@@ -69,6 +99,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: #242424;
+}
+
+.uppernav .darkmode {
+  margin-left: 70%;
 }
 
 .uppernav .media-links ul {
@@ -915,7 +949,7 @@ body {
 }
 
 .ads .ad a {
-  color: #b09d7b;
+  color: white;
 }
 
 .ads .ad .mask {
@@ -1488,5 +1522,64 @@ footer .copyright p {
     padding-top: 35px;
     padding-bottom: 35px;
   }
+}
+
+.darkmode {
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.darkmode .checkbox {
+  opacity: 1;
+  position: absolute;
+  background: red;
+}
+
+.darkmode .label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.darkmode .label img {
+  width: 18px;
+}
+
+.darkmode .label .ball {
+  background-color: #b09d7b;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.darkmode .checkbox:checked + .label .ball {
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
 }
 /*# sourceMappingURL=style.css.map */

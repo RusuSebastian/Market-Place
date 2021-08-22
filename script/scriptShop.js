@@ -1,3 +1,8 @@
+const chk = document.getElementById('chk');
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+});
+
 window.addEventListener("scroll", ()=>{
   const button=document.querySelector(".button-up-page");
   button.addEventListener("click",function(){

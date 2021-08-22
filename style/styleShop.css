@@ -1,4 +1,16 @@
 @import url("./style.css");
+body.dark .page-title {
+  background-color: #1c1c1c;
+}
+
+body.dark h1 {
+  color: white;
+}
+
+body.dark .row a {
+  color: black !important;
+}
+
 .page-title {
   background: #f2f2f2;
   text-align: center;

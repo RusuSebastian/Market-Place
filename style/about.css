@@ -1,4 +1,16 @@
 @import url(./faq.css);
+body.dark .numbers-container {
+  background: #1c1c1c;
+}
+
+body.dark .numbers-container h4 {
+  color: white;
+}
+
+body.dark .numbers-container .counter::after {
+  background-color: white !important;
+}
+
 .about-us {
   margin-top: 35px;
   margin-bottom: 35px;
