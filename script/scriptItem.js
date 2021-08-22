@@ -155,12 +155,18 @@ showItems("Coffee Bean",dealItms);
 
 
 
-
-
-
-
-
-
+window.addEventListener("scroll", ()=>{
+  const button=document.querySelector(".button-up-page");
+  button.addEventListener("click",function(){
+   document.documentElement.scrollTop = 0;
+   
+  });
+ if(window.scrollY>252){
+   button.style.display="block";
+ }else{
+   button.style.display="none";
+ }
+});
 
 
 

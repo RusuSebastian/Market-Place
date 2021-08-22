@@ -30,6 +30,7 @@ $colorc: #b09d7b;
 	padding: 0;
 	margin: 0;
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -37,9 +38,29 @@ body {
 	line-height: 1.42;
 	letter-spacing: 0.8px;
 }
-.margin {
-	padding: 0 18%;
+.button-up-page {
+	display: none;
+	cursor: pointer;
+	z-index: 1231;
+	background-color: $colorc;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	border-radius: 40px;
+	right: 5%;
+	bottom: 5%;
+	background-image: url("../photos/up-arrow-home.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
 }
+
+.margin {
+	width: 1200px;
+	// padding: 0 18%;
+	margin: 0 auto;
+}
+
 .uppernav {
 	display: flex;
 	justify-content: space-between;
@@ -121,7 +142,7 @@ body {
 	width: 20px;
 }
 
-.header-top {
+.header-top:first-of-type {
 	background-color: rgba(247, 247, 247, 1);
 	display: flex;
 	align-items: center;
@@ -132,91 +153,95 @@ body {
 	background-position: top left;
 	background-repeat: repeat;
 	background-size: auto;
-	.logo {
-		display: flex;
-		align-items: center;
-		.logopic {
-			background: $colorc;
-			border-radius: 50%;
-			padding: 5px;
-		}
-		p {
-			color: black;
-			font-family: $font-principal;
-			margin-left: 5px;
-		}
-	}
-	.search-Bar {
-		form {
-			// width: auto;
-			border: 2px solid #ebebeb;
-			border-radius: 50px;
-			overflow: hidden;
+	.header-top {
+		background: transparent;
+		padding: 0px;
+		.logo {
 			display: flex;
-
-			select {
-				padding: 16px;
-				border-radius: 50px 0 0 50px;
-				border: none;
-				width: 13vw;
+			align-items: center;
+			.logopic {
+				background: $colorc;
+				border-radius: 50%;
+				padding: 5px;
 			}
-			input {
-				padding: 16px;
-				border: none;
-				width: 50%;
-
-				margin-left: 3px;
+			p {
+				color: black;
+				font-family: $font-principal;
+				margin-left: 5px;
 			}
-			button {
-				border-radius: 0 50px 50px 0;
-				border: none;
-				cursor: pointer;
-				background-color: white;
-				background-size: 24px;
-				width: 50px;
-				margin: 0px;
-				position: relative;
-				img {
-					position: absolute;
-					top: 55%;
-					left: 50%;
-					transform: translate(-50%, -50%);
+		}
+		.search-Bar {
+			form {
+				// width: auto;
+				border: 2px solid #ebebeb;
+				border-radius: 50px;
+				overflow: hidden;
+				display: flex;
+
+				select {
+					padding: 16px;
+					border-radius: 50px 0 0 50px;
+					border: none;
+					width: 13vw;
+				}
+				input {
+					padding: 16px;
+					border: none;
+					width: 50%;
+
+					margin-left: 3px;
+				}
+				button {
+					border-radius: 0 50px 50px 0;
+					border: none;
+					cursor: pointer;
+					background-color: white;
+					background-size: 24px;
+					width: 50px;
+					margin: 0px;
+					position: relative;
+					img {
+						position: absolute;
+						top: 55%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
 				}
 			}
 		}
-	}
-	.my-cart {
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		.cart-icon {
-			background-color: $colorc;
-			height: 52px;
-			width: 52px;
-			border-radius: 50%;
-			padding: 8px;
+		.my-cart {
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			img {
-				width: 70%;
+			cursor: pointer;
+			.cart-icon {
+				background-color: $colorc;
+				height: 52px;
+				width: 52px;
+				border-radius: 50%;
+				padding: 8px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				img {
+					width: 70%;
+				}
+				&:hover {
+					background-color: #333;
+				}
 			}
-			&:hover {
-				background-color: #333;
-			}
-		}
-		.my-cart-text {
-			margin-left: 10px;
-			color: black;
-			p {
-				font-weight: bold;
-				font-size: 15px;
-			}
-			span {
-				font-size: 14px;
-			}
-			span:hover {
-				color: $colorc;
+			.my-cart-text {
+				margin-left: 10px;
+				color: black;
+				p {
+					font-weight: bold;
+					font-size: 15px;
+				}
+				span {
+					font-size: 14px;
+				}
+				span:hover {
+					color: $colorc;
+				}
 			}
 		}
 	}
@@ -438,7 +463,8 @@ body {
 	}
 	p {
 		font-size: 14px;
-		margin: 40px 0px;
+		margin-top: 40px;
+		margin-bottom: 40px;
 		position: relative;
 		opacity: 0;
 		animation: p;
@@ -500,12 +526,12 @@ body {
 	}
 	.arrow-left {
 		top: 50%;
-		left: 22%;
+		left: 100px;
 		transform: translate(-50%) rotate(180deg);
 	}
 	.arrow-right {
 		top: 50%;
-		right: 20%;
+		right: 50px;
 		transform: translate(-50%);
 	}
 }
@@ -584,7 +610,8 @@ body {
 				.product-info {
 					position: relative;
 					.info {
-						margin: 10px 0px;
+						margin-top: 10px;
+						margin-bottom: 10px;
 						&:hover {
 							color: $colorc;
 						}
@@ -684,10 +711,10 @@ body {
 		}
 	}
 	.one {
-		background-image: url("../photos/ads/sub-banner-1.png");
+		background-image: url("../photos/aboutUs/coffemachine.gif");
 	}
 	.two {
-		background-image: url("../photos/ads/sub-banner-2.png");
+		background-image: url("../photos/aboutUs/coffegrind.gif");
 	}
 }
 
@@ -797,7 +824,9 @@ body {
 		position: relative;
 		.info {
 			cursor: pointer;
-			margin: 10px 0px;
+
+			margin-top: 10px;
+			margin-bottom: 10px;
 			&:hover {
 				color: $colorc;
 			}
@@ -864,7 +893,9 @@ body {
 }
 .blogs {
 	// overflow: hidden;
-	margin: 20px 0 30px 0;
+
+	margin-top: 20px;
+	margin-bottom: 30px;
 	.top-blogs {
 		padding: 5px;
 		margin-bottom: 20px;
@@ -911,7 +942,8 @@ body {
 				}
 			}
 			p {
-				margin: 15px 0 10px 0;
+				margin-top: 15px;
+				margin-bottom: 10px;
 				font-size: 13px;
 				color: $colorc;
 			}
@@ -946,7 +978,9 @@ body {
 			width: 60px;
 			border-radius: 50%;
 			background-color: $colorc;
-			margin: 0px 15px 0px 10px;
+
+			margin-right: 15px;
+			margin-left: 10px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -1013,7 +1047,8 @@ footer {
 				}
 			}
 			.tel {
-				margin: 40px 0px 20px 0;
+				margin-top: 40px;
+				margin-bottom: 20px;
 				img {
 				}
 				span:first-of-type {
@@ -1053,7 +1088,8 @@ footer {
 				color: black;
 			}
 			p {
-				margin: 20px 0px;
+				margin-top: 20px;
+				margin-bottom: 20px;
 			}
 			form {
 				position: relative;
@@ -1087,10 +1123,21 @@ footer {
 		}
 	}
 	.copyright {
+		text-align: center;
 		p {
 			padding: 30px 0;
 			font-size: 14px;
 			color: #383838;
 		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.margin {
+		width: 980px;
+	}
+	.header-top {
+		padding-top: 35px;
+		padding-bottom: 35px;
 	}
 }

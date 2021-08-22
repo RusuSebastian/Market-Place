@@ -27,6 +27,7 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -35,8 +36,26 @@ body {
   letter-spacing: 0.8px;
 }
 
+.button-up-page {
+  display: none;
+  cursor: pointer;
+  z-index: 1231;
+  background-color: #b09d7b;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  right: 5%;
+  bottom: 5%;
+  background-image: url("../photos/up-arrow-home.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
 .margin {
-  padding: 0 18%;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .uppernav {
@@ -152,7 +171,7 @@ body {
   width: 20px;
 }
 
-.header-top {
+.header-top:first-of-type {
   background-color: #f7f7f7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,7 +190,12 @@ body {
   background-size: auto;
 }
 
-.header-top .logo {
+.header-top:first-of-type .header-top {
+  background: transparent;
+  padding: 0px;
+}
+
+.header-top:first-of-type .header-top .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,19 +204,19 @@ body {
           align-items: center;
 }
 
-.header-top .logo .logopic {
+.header-top:first-of-type .header-top .logo .logopic {
   background: #b09d7b;
   border-radius: 50%;
   padding: 5px;
 }
 
-.header-top .logo p {
+.header-top:first-of-type .header-top .logo p {
   color: black;
   font-family: "Prata", serif;
   margin-left: 5px;
 }
 
-.header-top .search-Bar form {
+.header-top:first-of-type .header-top .search-Bar form {
   border: 2px solid #ebebeb;
   border-radius: 50px;
   overflow: hidden;
@@ -201,21 +225,21 @@ body {
   display: flex;
 }
 
-.header-top .search-Bar form select {
+.header-top:first-of-type .header-top .search-Bar form select {
   padding: 16px;
   border-radius: 50px 0 0 50px;
   border: none;
   width: 13vw;
 }
 
-.header-top .search-Bar form input {
+.header-top:first-of-type .header-top .search-Bar form input {
   padding: 16px;
   border: none;
   width: 50%;
   margin-left: 3px;
 }
 
-.header-top .search-Bar form button {
+.header-top:first-of-type .header-top .search-Bar form button {
   border-radius: 0 50px 50px 0;
   border: none;
   cursor: pointer;
@@ -226,7 +250,7 @@ body {
   position: relative;
 }
 
-.header-top .search-Bar form button img {
+.header-top:first-of-type .header-top .search-Bar form button img {
   position: absolute;
   top: 55%;
   left: 50%;
@@ -234,7 +258,7 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.header-top .my-cart {
+.header-top:first-of-type .header-top .my-cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,7 +268,7 @@ body {
   cursor: pointer;
 }
 
-.header-top .my-cart .cart-icon {
+.header-top:first-of-type .header-top .my-cart .cart-icon {
   background-color: #b09d7b;
   height: 52px;
   width: 52px;
@@ -261,29 +285,29 @@ body {
           align-items: center;
 }
 
-.header-top .my-cart .cart-icon img {
+.header-top:first-of-type .header-top .my-cart .cart-icon img {
   width: 70%;
 }
 
-.header-top .my-cart .cart-icon:hover {
+.header-top:first-of-type .header-top .my-cart .cart-icon:hover {
   background-color: #333;
 }
 
-.header-top .my-cart .my-cart-text {
+.header-top:first-of-type .header-top .my-cart .my-cart-text {
   margin-left: 10px;
   color: black;
 }
 
-.header-top .my-cart .my-cart-text p {
+.header-top:first-of-type .header-top .my-cart .my-cart-text p {
   font-weight: bold;
   font-size: 15px;
 }
 
-.header-top .my-cart .my-cart-text span {
+.header-top:first-of-type .header-top .my-cart .my-cart-text span {
   font-size: 14px;
 }
 
-.header-top .my-cart .my-cart-text span:hover {
+.header-top:first-of-type .header-top .my-cart .my-cart-text span:hover {
   color: #b09d7b;
 }
 
@@ -591,7 +615,8 @@ body {
 
 .image-slide p {
   font-size: 14px;
-  margin: 40px 0px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   position: relative;
   opacity: 0;
   -webkit-animation: p;
@@ -679,14 +704,14 @@ body {
 
 .slider .arrow-left {
   top: 50%;
-  left: 22%;
+  left: 100px;
   -webkit-transform: translate(-50%) rotate(180deg);
           transform: translate(-50%) rotate(180deg);
 }
 
 .slider .arrow-right {
   top: 50%;
-  right: 20%;
+  right: 50px;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
 }
@@ -790,7 +815,8 @@ body {
 }
 
 .deals .bot-deal .inner-bot .product-item .product-info .info {
-  margin: 10px 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .deals .bot-deal .inner-bot .product-item .product-info .info:hover {
@@ -915,11 +941,11 @@ body {
 }
 
 .ads .one {
-  background-image: url("../photos/ads/sub-banner-1.png");
+  background-image: url("../photos/aboutUs/coffemachine.gif");
 }
 
 .ads .two {
-  background-image: url("../photos/ads/sub-banner-2.png");
+  background-image: url("../photos/aboutUs/coffegrind.gif");
 }
 
 .shop-by-categ .title {
@@ -1067,7 +1093,8 @@ body {
 
 .product-item .product-info .info {
   cursor: pointer;
-  margin: 10px 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .product-item .product-info .info:hover {
@@ -1151,7 +1178,8 @@ body {
 }
 
 .blogs {
-  margin: 20px 0 30px 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .blogs .top-blogs {
@@ -1219,7 +1247,8 @@ body {
 }
 
 .blogs .bot-blogs .container-blog p {
-  margin: 15px 0 10px 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
   font-size: 13px;
   color: #b09d7b;
 }
@@ -1267,7 +1296,8 @@ body {
   width: 60px;
   border-radius: 50%;
   background-color: #b09d7b;
-  margin: 0px 15px 0px 10px;
+  margin-right: 15px;
+  margin-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1356,7 +1386,8 @@ footer .main-footer .first-box .logo p {
 }
 
 footer .main-footer .first-box .tel {
-  margin: 40px 0px 20px 0;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 footer .main-footer .first-box .tel span:first-of-type {
@@ -1401,7 +1432,8 @@ footer .main-footer .last-box h5 {
 }
 
 footer .main-footer .last-box p {
-  margin: 20px 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 footer .main-footer .last-box form {
@@ -1438,9 +1470,23 @@ footer .main-footer .last-box form button img {
           transform: translate(-50%, -50%);
 }
 
+footer .copyright {
+  text-align: center;
+}
+
 footer .copyright p {
   padding: 30px 0;
   font-size: 14px;
   color: #383838;
+}
+
+@media (max-width: 1280px) {
+  .margin {
+    width: 980px;
+  }
+  .header-top {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,150 @@
+@import url(./faq.css);
+$font-principal: "Prata", serif;
+$font-secundar: "Rubik", sans-serif;
+$color1: #5a5a5a;
+$color2: #a7752a;
+$color3: #a8741a;
+$colorc: #b09d7b;
+$gray: #838383;
+$linehei: 24px;
+
+.about-us {
+	margin-top: 35px;
+	margin-bottom: 35px;
+	.title {
+		text-align: center;
+		line-height: 24px;
+		margin-bottom: 35px;
+		h3 {
+			font-size: 15px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 13px;
+			color: $gray;
+		}
+	}
+	.photo-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1.5fr 0.4fr 1.1fr;
+		gap: 5px;
+		grid-template-areas:
+			"poza2 poza1 poza1"
+			"poza2 poza3 poza4"
+			"poza2 poza3 poza4";
+		height: 80vh;
+		.poz {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.poza1 {
+			grid-area: poza1;
+			background-image: url("../photos/aboutUs/poza1.jpg");
+		}
+		.poza2 {
+			grid-area: poza2;
+			background-image: url("../photos/aboutUs/coffee.gif");
+		}
+		.poza3 {
+			grid-area: poza3;
+			background-image: url("../photos/aboutUs/poza3.jpg");
+		}
+		.poza4 {
+			grid-area: poza4;
+			background-image: url("../photos/aboutUs/coffegrind.gif");
+		}
+	}
+}
+
+.numbers {
+	.numbers-container {
+		background-color: #f2f2f2;
+		display: flex;
+		border-radius: 5px;
+		align-items: center;
+		.counter-container {
+			padding: 40px;
+			text-align: center;
+			flex: 1;
+			.counter {
+				position: relative;
+				padding-bottom: 20px;
+				h3 {
+					font-size: 30px;
+				}
+				&::after {
+					content: "";
+					width: 30px;
+					position: absolute;
+					height: 2px;
+					background-color: black;
+					left: 50%;
+					bottom: 0;
+					transform: translate(-50%);
+				}
+			}
+			h4 {
+				font-size: 13px;
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+.testimonials {
+	margin-top: 60px;
+	margin-bottom: 10px;
+	width: 300%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	.testimonial {
+		text-align: center;
+		line-height: 24px;
+
+		img {
+			width: 65px;
+			transform: rotate(180deg);
+			margin-bottom: 15px;
+		}
+		p {
+			color: $gray;
+			font-size: 13px;
+			font-style: italic;
+			margin-bottom: 15px;
+			// padding: 0 10%;
+		}
+		h5 {
+			color: $colorc;
+			font-size: 14px;
+		}
+		h6 {
+			color: #aaaaaa;
+			font-size: 13px;
+			font-weight: 400;
+		}
+	}
+}
+.testimonials-dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+	span {
+		cursor: pointer;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #c5c5c5;
+		&:hover {
+			background: black;
+		}
+		&:not(:last-of-type) {
+			margin-right: 5px;
+		}
+	}
+	.active-dot {
+		background: black;
+	}
+}

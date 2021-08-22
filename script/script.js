@@ -308,3 +308,16 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
  let blogproduct= document.getElementsByClassName('container-blog');
  btnsblog[0].addEventListener("click",function(){left_mover(33,blogproduct)});
  btnsblog[1].addEventListener("click",function(){right_mover(33,67,blogproduct)});
+
+ window.addEventListener("scroll", ()=>{
+   const button=document.querySelector(".button-up-page");
+   button.addEventListener("click",function(){
+    document.documentElement.scrollTop = 0;
+    
+   });
+  if(window.scrollY>252){
+    button.style.display="block";
+  }else{
+    button.style.display="none";
+  }
+ });
