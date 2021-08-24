@@ -1,3 +1,24 @@
+//modal
+
+const modal=document.querySelector(".modal-view");
+// const modalBtns=[...document.querySelectorAll(".view-modal")];
+const closeModal=document.querySelector(".close-modal");
+//  modalShower();
+// function modalShower(){
+//  modalBtns.forEach(btnMod =>{
+//      btnMod.addEventListener("click", ()=>{
+//        modal.classList.add("show-modal");
+//      });
+//  });
+//  closeModal.addEventListener("click", ()=>{
+//    modal.classList.remove("show-modal");
+//  });
+// }
+closeModal.addEventListener("click", ()=>{
+  modal.classList.remove("show-modal");
+});
+
+
 const chk = document.getElementById('chk');
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
@@ -14,6 +35,18 @@ function windowClicked (buttonClass,dropdown){
   }
 }
 
+//cart pop-up
+const cartModal=document.getElementsByClassName("widget-cart")[0];
+const myCartBtn=document.getElementsByClassName("my-cart")[0];
+
+myCartBtn.addEventListener("click", ()=>{
+  cartModal.classList.toggle("show");
+  // windowClicked(".cart-icon",cartModal);
+});
+
+
+
+//dropdowns
 const accountBtn = document.querySelector(".account-btn");
 const dropdown = document.querySelector(".dropdown-content");
 
@@ -161,7 +194,7 @@ const items = [
   }
 ];
 
-console.log(items[8].type);
+
 const categItms = document.querySelector(".categories-items");
 const dealItms=document.querySelector(".inner-bot");
 function showItems(type,location) {
@@ -228,6 +261,15 @@ function showItems(type,location) {
       view.classList.add("view-modal");
       productBtns.appendChild(view);
 
+      view.addEventListener("click",()=>{
+        
+                modal.classList.add("show-modal");
+             
+   
+      });
+
+
+
       const viewImg=document.createElement("img");
       viewImg.src="./photos/item-hover/eye.svg";
       view.appendChild(viewImg);
@@ -249,15 +291,18 @@ showItems("Coffee Bean",dealItms);
 //shopcateg
 const categories = document.querySelectorAll(".active");
 const listCategories = document.querySelector(".type-categories");
-console.log(listCategories.children);
+
 listCategories.addEventListener("click", function addEvent(e) {
   categItms.innerHTML = "";
   showItems(e.target.innerText,categItms);
-
+  
   for (const li of listCategories.children) {
     li.classList.remove("active");
+  
   }
   e.target.classList.add("active");
+
+
 });
 
 // end shop categ
@@ -326,3 +371,5 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
     button.style.display="none";
   }
  });
+
+

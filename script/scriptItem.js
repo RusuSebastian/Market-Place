@@ -3,6 +3,15 @@ chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
 });
 
+//cart pop-up
+const cartModal=document.getElementsByClassName("widget-cart")[0];
+const myCartBtn=document.getElementsByClassName("my-cart")[0];
+console.log(cartModal,myCartBtn);
+myCartBtn.addEventListener("click", ()=>{
+  cartModal.classList.toggle("show");
+  // windowClicked(".cart-icon",cartModal);
+});
+
 
 const items = [
   {

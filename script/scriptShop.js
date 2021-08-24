@@ -3,6 +3,16 @@ chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
 });
 
+//cart pop-up
+const cartModal=document.getElementsByClassName("widget-cart")[0];
+const myCartBtn=document.getElementsByClassName("my-cart")[0];
+console.log(cartModal,myCartBtn);
+myCartBtn.addEventListener("click", ()=>{
+  cartModal.classList.toggle("show");
+  // windowClicked(".cart-icon",cartModal);
+});
+
+
 window.addEventListener("scroll", ()=>{
   const button=document.querySelector(".button-up-page");
   button.addEventListener("click",function(){
@@ -194,6 +204,7 @@ function windowClicked (buttonClass,dropdown){
 
 function showItems() {
   for (const item of items) {
+      
       const product = document.createElement("div");
       product.classList.add("product-item");
       product.onmouseover = function () {
@@ -214,6 +225,12 @@ function showItems() {
       pInfo.classList.add("info");
       pInfo.innerText = item.info;
       productInfo.appendChild(pInfo);
+
+      const pminiDrisc = document.createElement("div");
+      pminiDrisc.classList.add("mini-drisc");
+      productInfo.appendChild(pminiDrisc);
+
+
       const pPrice = document.createElement("p");
       pPrice.classList.add("price");
       pPrice.innerText = `$${item.price}`;
@@ -267,7 +284,50 @@ function showItems() {
       wishImg.src="./photos/item-hover/heart.svg";
       wish.appendChild(wishImg);
     }
+    
   
 };
 showItems();
 
+
+const btnList=document.querySelector(".list");
+const btnGrid=document.querySelector(".grid");
+
+btnList.addEventListener("click",()=>{
+  const content=document.querySelector(".bot-side");
+  content.innerHTML="";
+  showItems();
+  
+  btnList.classList.add("activ-shop-view");
+  btnGrid.classList.remove("activ-shop-view");
+
+  // const content=document.querySelector(".bot-side");
+  content.style.display="block";
+  
+  const items=[...content.children];
+  for(let item of items){
+    item.style.flexDirection="row";
+    item.firstElementChild.style.width="30%";
+    item.lastElementChild.style.overflow="hidden";
+    item.lastElementChild.style.padding="50px"; 
+  }
+  const infoBoxes=[...document.querySelectorAll(".mini-drisc")]; 
+  for(let box of infoBoxes){ 
+      const info=document.createElement("p");
+      info.innerText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.";
+      info.style.fontSize="13px";
+      info.style.color="#838383";
+      box.appendChild(info);
+    } 
+
+}); //,{once : true}
+
+btnGrid.addEventListener("click",()=>{
+  btnList.classList.remove("activ-shop-view");
+  btnGrid.classList.add("activ-shop-view");
+  const content=document.querySelector(".bot-side");
+  content.innerHTML="";
+  content.style.display="grid";
+  showItems();
+  
+});
