@@ -38,14 +38,14 @@ section {
 }
 
 section.active {
-  background: #7a5f4e;
+  background: #d9ac83;
 }
 
 section .container {
   border-radius: 10px;
   position: relative;
   width: 1100px;
-  height: 550px;
+  height: 600px;
   background-color: white;
   -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -99,6 +99,7 @@ section .form-box .top p {
 section .form-box .top span {
   color: #614635;
   cursor: pointer;
+  font-weight: 600;
 }
 
 section form {
@@ -248,7 +249,8 @@ section .container .signup .img-box {
 }
 
 section .container .signup .span-login {
-  color: #7a5f4e;
+  color: #d9ac83;
+  font-weight: 600;
 }
 
 section .container .login .form-box {
