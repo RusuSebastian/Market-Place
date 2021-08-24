@@ -340,15 +340,14 @@ body.dark {
 	visibility: visible;
 	opacity: 1;
 }
-#navbar:hover,
-.nav-item:hover {
+li:hover .navbar {
 	color: $colorc;
 }
-#navbar.sale.hot::before {
+.sale.hot::before {
 	background-color: #ef6454;
 	content: "HOT";
 }
-#navbar.sale.hot::after {
+.sale.hot::after {
 	border-top: 5px solid #ef6454;
 }
 .sale::before {

@@ -25,6 +25,8 @@
           align-items: flex-end;
   padding: 20px;
   cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .blogs .container-blogs .pic .avatar {
@@ -191,6 +193,8 @@
 
 .blogs .container-blogs .bginfo {
   padding: 40px 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .blogs .container-blogs .bginfo svg {

@@ -29,6 +29,7 @@ $linehei: 24px;
 			align-items: flex-end;
 			padding: 20px;
 			cursor: pointer;
+			transition: 0.5s;
 			.avatar {
 				border: 3px solid white;
 				width: 50px;
@@ -151,6 +152,7 @@ $linehei: 24px;
 		}
 		.bginfo {
 			padding: 40px 60px;
+			transition: 0.5s;
 			svg {
 				width: 40px;
 				cursor: pointer;

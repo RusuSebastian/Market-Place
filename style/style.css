@@ -430,17 +430,16 @@ body.dark a.nav-item {
   opacity: 1;
 }
 
-#navbar:hover,
-.nav-item:hover {
+li:hover .navbar {
   color: #b09d7b;
 }
 
-#navbar.sale.hot::before {
+.sale.hot::before {
   background-color: #ef6454;
   content: "HOT";
 }
 
-#navbar.sale.hot::after {
+.sale.hot::after {
   border-top: 5px solid #ef6454;
 }
 
