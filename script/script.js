@@ -1,5 +1,4 @@
-//modal
-
+//MODAL
 const modal=document.querySelector(".modal-view");
 // const modalBtns=[...document.querySelectorAll(".view-modal")];
 const closeModal=document.querySelector(".close-modal");
@@ -17,12 +16,36 @@ const closeModal=document.querySelector(".close-modal");
 closeModal.addEventListener("click", ()=>{
   modal.classList.remove("show-modal");
 });
+//MODAL END
 
 
+
+//DARKMODE 
+let darkMode=localStorage.getItem('darkMode');
 const chk = document.getElementById('chk');
+const toggleDarkMode = () =>{
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')){
+    localStorage.setItem("darkMode", "enabled");
+  }else{
+    localStorage.setItem("darkMode", null);
+  }
+};
+if(darkMode==="enabled"){
+  chk.checked=true;
+  document.body.classList.add('dark');
+}
 chk.addEventListener('change', () => {
-	document.body.classList.toggle('dark');
+	darkMode=localStorage.getItem('darkMode');
+  toggleDarkMode();
+  console.log(darkMode);
 });
+//DARKMODE END
+
+
+
+
+
 
 //DROP DOWNS
 function windowClicked (buttonClass,dropdown){
@@ -66,7 +89,7 @@ categ.onclick = (() => {
 
 
 
-//main carusel
+//MAIN CAROUSELL
 
 const left = document.querySelector(".arrow-left");
 const right = document.querySelector(".arrow-right");
@@ -99,13 +122,10 @@ setInterval(function () {
   nextImage("next");
 }, 8000);
 
-//End main carousel
+//MAIN CAROUSELL END
 
 
-
-//img hover
-
-
+//IMG HOVER
 function hover(element, nr) {
   
   element.children[0].setAttribute('src', `./photos/items/coffee${nr}.jpg`);
@@ -115,10 +135,11 @@ function unhover(element, nr) {
   element.children[0].setAttribute('src', `./photos/items/coffee${nr}.jpg`);
 }
 
-//end img hover
+//IMG HOVER END
 
-//shop by categories
 
+
+//SHOP BY CATEGORIES
 const items = [
   {
     type: ["Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],
@@ -194,7 +215,6 @@ const items = [
   }
 ];
 
-
 const categItms = document.querySelector(".categories-items");
 const dealItms=document.querySelector(".inner-bot");
 function showItems(type,location) {
@@ -261,14 +281,9 @@ function showItems(type,location) {
       view.classList.add("view-modal");
       productBtns.appendChild(view);
 
-      view.addEventListener("click",()=>{
-        
-                modal.classList.add("show-modal");
-             
-   
+      view.addEventListener("click",()=>{       
+           modal.classList.add("show-modal");            
       });
-
-
 
       const viewImg=document.createElement("img");
       viewImg.src="./photos/item-hover/eye.svg";
@@ -305,11 +320,12 @@ listCategories.addEventListener("click", function addEvent(e) {
 
 });
 
-// end shop categ
+//SHOP BY CATERGORIES END
 
 
-//carousel items
 
+
+//CAROUSELL ITEMS 
 let l=0;
   
 function right_mover(movePer,maxMove,product){
@@ -345,20 +361,24 @@ function left_mover (movePer,product){
         }
     }
 }
-
+//CAROUSELL ITEMS END
 
 let btnsdeal = document.querySelectorAll(".dealarr");
 let product = document.getElementsByClassName('product-item');
 btnsdeal[0].addEventListener("click",function(){left_mover(100,product)});
 btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
   
-
-  //
  let btnsblog=document.querySelectorAll(".arrow-blog");
  let blogproduct= document.getElementsByClassName('container-blog');
  btnsblog[0].addEventListener("click",function(){left_mover(33,blogproduct)});
  btnsblog[1].addEventListener("click",function(){right_mover(33,67,blogproduct)});
 
+//CAROUSELL ITEMS BUTTONS MAIN PAGE END
+
+
+
+
+//BUTTON TO UP PAGE
  window.addEventListener("scroll", ()=>{
    const button=document.querySelector(".button-up-page");
    button.addEventListener("click",function(){
@@ -371,5 +391,5 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
     button.style.display="none";
   }
  });
-
+//BUTTON TO UP PAGE END
 
