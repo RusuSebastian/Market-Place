@@ -1,0 +1,66 @@
+[   
+    {
+      "id": "1",
+      "photos": [
+        "url1",
+        "url2",
+        "url3",
+        "url4",
+        "url5",
+        "url6"
+      ],
+      "name": "",
+      "price": "",
+      "discount": "",
+      "smallDescription": "",
+      "stock": "",
+      "categories": [
+        "cat1",
+        "cat2",
+        "cat3"
+      ],
+      "bigDescription": "",
+      "weight": "",
+      "dimension": "123x423x421",
+      "color": "",
+      "size": "",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    },
+    {
+      "id": "1",
+      "photos": [
+        "url1",
+        "url2",
+        "url3",
+        "url4",
+        "url5",
+        "url6"
+      ],
+      "name": "",
+      "price": "",
+      "discount": "",
+      "smallDescription": "",
+      "stock": "",
+      "categories": [
+        "cat1",
+        "cat2",
+        "cat3"
+      ],
+      "bigDescription": "",
+      "weight": "",
+      "dimension": "123x423x421",
+      "color": "",
+      "size": "",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    }
+   
+
+]
