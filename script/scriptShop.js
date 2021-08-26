@@ -1,7 +1,25 @@
+//DARKMODE 
+let darkMode=localStorage.getItem('darkMode');
 const chk = document.getElementById('chk');
+const toggleDarkMode = () =>{
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')){
+    localStorage.setItem("darkMode", "enabled");
+  }else{
+    localStorage.setItem("darkMode", null);
+  }
+};
+if(darkMode==="enabled"){
+  chk.checked=true;
+  document.body.classList.add('dark');
+}
 chk.addEventListener('change', () => {
-	document.body.classList.toggle('dark');
+	darkMode=localStorage.getItem('darkMode');
+  toggleDarkMode();
+  console.log(darkMode);
 });
+//DARKMODE END
+
 
 //cart pop-up
 const cartModal=document.getElementsByClassName("widget-cart")[0];
@@ -9,10 +27,10 @@ const myCartBtn=document.getElementsByClassName("my-cart")[0];
 console.log(cartModal,myCartBtn);
 myCartBtn.addEventListener("click", ()=>{
   cartModal.classList.toggle("show");
-  // windowClicked(".cart-icon",cartModal);
+  
 });
 
-
+//
 window.addEventListener("scroll", ()=>{
   const button=document.querySelector(".button-up-page");
   button.addEventListener("click",function(){
@@ -69,9 +87,9 @@ window.addEventListener("scroll", ()=>{
   });
 })();
 
-
-
 // end shop categ
+
+
 //DROP DOWNS
 function windowClicked (buttonClass,dropdown){
     window.onclick = function (e) {
@@ -100,6 +118,8 @@ function windowClicked (buttonClass,dropdown){
   });
   //END DROP DOWNS
 
+
+//SHOW ITEMS
 
   const items = [
     {
@@ -203,33 +223,49 @@ function windowClicked (buttonClass,dropdown){
   const categItms = document.querySelector(".bot-side");
 
 function showItems() {
-  for (const item of items) {
+  for (const item of allItems) {
       
       const product = document.createElement("div");
       product.classList.add("product-item");
       product.onmouseover = function () {
-        imgProduct.src = item.url2;
+        imgProduct.src = item.photos[1];
+
       };
       product.onmouseout = function () {
-        imgProduct.src = item.url;
+        imgProduct.src = item.photos[0];
       };
       categItms.appendChild(product);
       const imgProduct = document.createElement("img");
       imgProduct.setAttribute("id", "my-img");
-      imgProduct.src = item.url;
+      imgProduct.src = item.photos[0];
       product.appendChild(imgProduct);
       const productInfo = document.createElement("div");
       productInfo.classList.add("product-info");
       product.appendChild(productInfo);
-      const pInfo = document.createElement("p");
+      const pInfo = document.createElement("a");
       pInfo.classList.add("info");
-      pInfo.innerText = item.info;
+      pInfo.href="item-page.html";
+      
+      pInfo.onclick=()=>{
+        localStorage.setItem("id",item.id);
+        localStorage.setItem("categories",item.categories);
+
+      }
+
+      pInfo.innerText = item["name"];
       productInfo.appendChild(pInfo);
 
       const pminiDrisc = document.createElement("div");
       pminiDrisc.classList.add("mini-drisc");
       productInfo.appendChild(pminiDrisc);
-
+      const info=document.createElement("p");
+      info.classList.add("mini-discript")
+      info.innerText=item.smallDescription;
+      info.style.fontSize="12px";
+      info.style.marginTop="10px";
+      info.style.color="#838383";
+      info.style.display="none";
+      pminiDrisc.appendChild(info);
 
       const pPrice = document.createElement("p");
       pPrice.classList.add("price");
@@ -241,7 +277,7 @@ function showItems() {
       oldPrice.classList.add("old-price");
       function old() {
         if (item.discount > 0) {
-          oldPrice.innerText = ` $ ` + ((item.discount / 100) * item.price + Number(item.price));
+          oldPrice.innerText = ` $ ` + ((item.discount / 100) * item.price + Number(item.price)).toFixed(2);
         }
       };
       old();
@@ -272,6 +308,36 @@ function showItems() {
       view.classList.add("view-modal");
       productBtns.appendChild(view);
 
+      view.addEventListener("click",()=>{       
+        modal.classList.add("show-modal"); 
+        const modalContainer=document.querySelector(".modal-content");
+        const leftSide=document.querySelector(".left-side");
+        const rightSide=document.querySelector(".right-side");
+        leftSide.innerHTML=`<img src="${item.photos[0]}" alt="" > `;
+        rightSide.innerHTML=`
+        <h2 class="title-item">${item.name}</h2>
+        <p class="price">$${item.price} <span class="price-discount">${item.discount>0?'$'+((item.discount / 100) * item.price + Number(item.price)).toFixed(2):``}</span></p>
+        <p class="small-description">${item.smallDescription}</p>
+        <p class="stock"><span class="stock-span">${item.stock} </span>in stock</p>
+        <form action="" class="Qty-add-cart">
+            <label for="qty">Qty:</label>
+            <input type="number" name="qty" id="qty" min="1" step="1" max="95"
+            value="1" inputmode="numeric" pattern="[0-9]" >
+            <button type="submit">ADD TO CART</button>
+        </form>
+        <p class="sku">SKU:<span class="sku-span"> NHFL5</span></p>
+        <p class="categories-item">Categories:<span class="categories-item-span">${item.categories[0]}</span></p>
+        <button class="close-modal">Close</button>`;
+        
+         const closeModal=document.querySelector(".close-modal");
+         closeModal.addEventListener("click", ()=>{
+         modal.classList.remove("show-modal");
+         });
+        modalContainer.appendChild(leftSide);       
+        modalContainer.appendChild(rightSide);       
+   });
+
+
       const viewImg=document.createElement("img");
       viewImg.src="./photos/item-hover/eye.svg";
       view.appendChild(viewImg);
@@ -284,16 +350,18 @@ function showItems() {
       wishImg.src="./photos/item-hover/heart.svg";
       wish.appendChild(wishImg);
     }
-    
-  
 };
 showItems();
+//SHOW ITEMS END
 
 
+
+
+
+//VIEW LIST TYPE
 const btnList=document.querySelector(".list");
-const btnGrid=document.querySelector(".grid");
-
 btnList.addEventListener("click",()=>{
+  
   const content=document.querySelector(".bot-side");
   content.innerHTML="";
   showItems();
@@ -307,21 +375,19 @@ btnList.addEventListener("click",()=>{
   const items=[...content.children];
   for(let item of items){
     item.style.flexDirection="row";
-    item.firstElementChild.style.width="30%";
+    item.firstElementChild.style.width="250px";
     item.lastElementChild.style.overflow="hidden";
     item.lastElementChild.style.padding="50px"; 
+
   }
-  const infoBoxes=[...document.querySelectorAll(".mini-drisc")]; 
-  for(let box of infoBoxes){ 
-      const info=document.createElement("p");
-      info.innerText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.";
-      info.style.fontSize="13px";
-      info.style.color="#838383";
-      box.appendChild(info);
-    } 
+  const allminidiscript=[...document.querySelectorAll(".mini-discript")];
+  for (let mini of allminidiscript){
+    mini.style.display="block";
+  }
+  
+});
 
-}); //,{once : true}
-
+const btnGrid=document.querySelector(".grid");
 btnGrid.addEventListener("click",()=>{
   btnList.classList.remove("activ-shop-view");
   btnGrid.classList.add("activ-shop-view");
@@ -331,3 +397,14 @@ btnGrid.addEventListener("click",()=>{
   showItems();
   
 });
+//VIEW LIST TYPE END
+
+//MODAL
+const modal=document.querySelector(".modal-view");
+
+const closeModal=document.querySelector(".close-modal");
+
+closeModal.addEventListener("click", ()=>{
+  modal.classList.remove("show-modal");
+});
+//MODAL END

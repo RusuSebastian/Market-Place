@@ -769,15 +769,19 @@ li:hover .navbar {
 				position: relative;
 				transition: 1s;
 				img {
-					width: 100%;
-					height: 100%;
+					width: 280px;
+					height: 280px;
 					margin-bottom: 20px;
 				}
 				.product-info {
 					position: relative;
+
 					.info {
+						text-decoration: none;
+						text-transform: uppercase;
 						margin-top: 10px;
 						margin-bottom: 10px;
+						color: #2c2c2c;
 						&:hover {
 							color: $colorc;
 						}
@@ -823,6 +827,14 @@ li:hover .navbar {
 							&:hover {
 								background-color: #333;
 							}
+							img {
+								width: 20px;
+								height: 20px;
+								position: relative;
+								top: 50%;
+								left: 25%;
+								transform: translate(-50%, -50%);
+							}
 						}
 					}
 				}
@@ -840,12 +852,13 @@ li:hover .navbar {
 .ads {
 	display: flex;
 	justify-content: space-between;
-	height: 25vh;
+
 	margin-bottom: 40px;
 	.ad {
+		height: 200px;
 		position: relative;
 		border-radius: 10px;
-		padding: 70px 50px;
+		padding: 50px;
 		flex: 0.48;
 		background-position: center;
 		background-size: cover;
@@ -959,6 +972,10 @@ li:hover .navbar {
 
 				.info {
 					font-size: 14px;
+					color: #2c2c2c;
+					&:hover {
+						color: $colorc;
+					}
 				}
 				&:not(:nth-child(3n)) {
 					border-right: 1px solid #e6e6e6;
@@ -982,15 +999,18 @@ li:hover .navbar {
 	display: flex;
 	flex-direction: column;
 	img {
-		width: 100%;
-		height: 100%;
+		width: 280px;
+		height: 280px;
 		margin-bottom: 20px;
 	}
 	.product-info {
 		position: relative;
+		// height: 300px;
 		.info {
+			text-transform: uppercase;
+			font-size: 14px;
 			cursor: pointer;
-
+			color: #2c2c2c;
 			margin-top: 10px;
 			margin-bottom: 10px;
 			&:hover {
@@ -1031,6 +1051,9 @@ li:hover .navbar {
 			.cart,
 			.view-modal,
 			.wishlist {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				cursor: pointer;
 				border: none;
 				width: 40px;
@@ -1041,10 +1064,11 @@ li:hover .navbar {
 					background-color: #333;
 				}
 				img {
-					height: 45%;
+					width: 20px;
+					height: 20px;
 					position: relative;
 					top: 50%;
-					left: 50%;
+					left: 25%;
 					transform: translate(-50%, -50%);
 				}
 			}
@@ -1100,6 +1124,7 @@ li:hover .navbar {
 			margin-right: 1.4%;
 			// padding: 10px;
 			img {
+				height: 220px;
 				width: 100%;
 				border-radius: 10px;
 				transition: 0.3s;
@@ -1372,10 +1397,9 @@ footer {
 		.left-side {
 			// flex: 0.9;
 			img {
-				width: auto;
+				width: 400px;
 				position: relative;
-
-				height: auto;
+				height: 400px;
 			}
 		}
 		.right-side {
@@ -1396,7 +1420,7 @@ footer {
 				}
 			}
 			.small-description {
-				font-size: 15px;
+				font-size: 13px;
 				color: #838383;
 			}
 			.stock {
@@ -1473,7 +1497,7 @@ footer {
 			}
 			.close-modal {
 				position: absolute;
-				top: -75px;
+				top: -30px;
 				right: -30px;
 				padding: 5px;
 				background: transparent;
@@ -1493,4 +1517,7 @@ footer {
 .modal-view.show-modal {
 	pointer-events: auto;
 	opacity: 1;
+}
+.info {
+	text-decoration: none !important;
 }

@@ -6,7 +6,10 @@ $color1: #5a5a5a;
 $color2: #a7752a;
 $color3: #a8741a;
 $colorc: #b09d7b;
-
+.item-name-page {
+	color: $colorc;
+	font-weight: 600;
+}
 body.dark {
 	h2,
 	label {
@@ -47,13 +50,14 @@ body.dark {
 		display: flex;
 		.left-side {
 			flex: 0.9;
+			padding: 0px 20px 20px 20px;
 			img {
 				width: 20%;
 			}
 			#featured {
 				position: relative;
 				width: 100%;
-				height: auto;
+				height: 522px;
 			}
 			.thumbnail-container {
 				position: relative;
@@ -64,6 +68,7 @@ body.dark {
 					transition: 1s;
 					position: relative;
 					width: 25%;
+					height: 120.5px;
 					&:hover {
 						opacity: 0.8;
 					}
@@ -285,4 +290,8 @@ body.dark {
 }
 .deals {
 	margin-top: 30px;
+}
+#my-img {
+	width: 280px;
+	height: 280px;
 }

@@ -1,24 +1,3 @@
-//MODAL
-const modal=document.querySelector(".modal-view");
-// const modalBtns=[...document.querySelectorAll(".view-modal")];
-const closeModal=document.querySelector(".close-modal");
-//  modalShower();
-// function modalShower(){
-//  modalBtns.forEach(btnMod =>{
-//      btnMod.addEventListener("click", ()=>{
-//        modal.classList.add("show-modal");
-//      });
-//  });
-//  closeModal.addEventListener("click", ()=>{
-//    modal.classList.remove("show-modal");
-//  });
-// }
-closeModal.addEventListener("click", ()=>{
-  modal.classList.remove("show-modal");
-});
-//MODAL END
-
-
 
 //DARKMODE 
 let darkMode=localStorage.getItem('darkMode');
@@ -38,7 +17,6 @@ if(darkMode==="enabled"){
 chk.addEventListener('change', () => {
 	darkMode=localStorage.getItem('darkMode');
   toggleDarkMode();
-  console.log(darkMode);
 });
 //DARKMODE END
 
@@ -140,105 +118,38 @@ function unhover(element, nr) {
 
 
 //SHOP BY CATEGORIES
-const items = [
-  {
-    type: ["Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],
-    url: "./photos/items/coffee2.jpg",
-    url2: "./photos/items/coffee3.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "32"
-  },
-  {
-    type: ["Coffee Bean","Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],
-    url: "./photos/items/coffee2.jpg",
-    url2: "./photos/items/coffee3.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "10.00",
-    discount: "43"
-  },
-  {
-    type: ["Coffee Bean","Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],
-    url: "./photos/items/coffee2.jpg",
-    url2: "./photos/items/coffee3.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "12"
-  },
-  {
-    type:["Coffee Bean","Machines","Cup and Glass","Health & Safety","Varieties","Excels Coffee"],
-    url: "./photos/items/coffee2.jpg",
-    url2: "./photos/items/coffee3.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "0"
-  },
-  {
-    type: "Machines",
-    url: "./photos/items/coffee1.jpg",
-    url2: "./photos/items/coffee4.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "32"
-  },
-  {
-    type: "Coffee Bean",
-    url: "./photos/items/coffee3.jpg",
-    url2: "./photos/items/coffee4.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "54"
-  },
-  {
-    type: "Coffee Bean",
-    url: "./photos/items/coffee4.jpg",
-    url2: "./photos/items/coffee5.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "35"
-  },
-  {
-    type: ["Health & Safety","Varieties","Coffee Bean"],
-    url: "./photos/items/coffee4.jpg",
-    url2: "./photos/items/coffee5.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "35"
-  },
-  {
-    type: ["Health & Safety","Varieties"],
-    url: "./photos/items/coffee4.jpg",
-    url2: "./photos/items/coffee5.jpg",
-    info: "Sky Blue Designer Pink Longue Tub",
-    price: "100.00",
-    discount: "35"
-  }
-];
-
+const modal=document.querySelector(".modal-view");
 const categItms = document.querySelector(".categories-items");
 const dealItms=document.querySelector(".inner-bot");
 function showItems(type,location) {
-  for (const item of items) {
-    if (item.type.includes(type)) {
+  for (const item of allItems) {
+    if (item["categories"].includes(type)) {
       const product = document.createElement("div");
       product.classList.add("product-item");
       product.onmouseover = function () {
-        imgProduct.src = item.url2;
+        imgProduct.src = item["photos"][1];
       };
       product.onmouseout = function () {
-        imgProduct.src = item.url;
+        imgProduct.src = item["photos"][0];
       };
       location.appendChild(product);
       const imgProduct = document.createElement("img");
       imgProduct.setAttribute("id", "my-img");
-      imgProduct.src = item.url;
+      imgProduct.src = item["photos"][0];
       product.appendChild(imgProduct);
       const productInfo = document.createElement("div");
       productInfo.classList.add("product-info");
       product.appendChild(productInfo);
-      const pInfo = document.createElement("p");
+      const pInfo = document.createElement("a");
       pInfo.classList.add("info");
-      pInfo.innerText = item.info;
+      pInfo.href="item-page.html";
+      
+      pInfo.onclick=()=>{
+        localStorage.setItem("id",item.id);
+        localStorage.setItem("categories",item.categories);
+
+      }
+      pInfo.innerText = item["name"];
       productInfo.appendChild(pInfo);
       const pPrice = document.createElement("p");
       pPrice.classList.add("price");
@@ -250,7 +161,7 @@ function showItems(type,location) {
       oldPrice.classList.add("old-price");
       function old() {
         if (item.discount > 0) {
-          oldPrice.innerText = ` $ ` + ((item.discount / 100) * item.price + Number(item.price));
+          oldPrice.innerText = ` $ ` + ((item.discount / 100) * item.price + Number(item.price)).toFixed(2);
         }
       };
       old();
@@ -281,14 +192,41 @@ function showItems(type,location) {
       view.classList.add("view-modal");
       productBtns.appendChild(view);
 
+      
       view.addEventListener("click",()=>{       
-           modal.classList.add("show-modal");            
+           modal.classList.add("show-modal"); 
+           const modalContainer=document.querySelector(".modal-content");
+           const leftSide=document.querySelector(".left-side");
+           const rightSide=document.querySelector(".right-side");
+           leftSide.innerHTML=`<img src="${item.photos[0]}" alt="" > `;
+           rightSide.innerHTML=`
+           <h2 class="title-item">${item.name}</h2>
+           <p class="price">$${item.price} <span class="price-discount">${item.discount>0?'$'+((item.discount / 100) * item.price + Number(item.price)).toFixed(2):``}</span></p>
+           <p class="small-description">${item.smallDescription}</p>
+           <p class="stock"><span class="stock-span">${item.stock} </span>in stock</p>
+           <form action="" class="Qty-add-cart">
+               <label for="qty">Qty:</label>
+               <input type="number" name="qty" id="qty" min="1" step="1" max="95"
+               value="1" inputmode="numeric" pattern="[0-9]" >
+               <button type="submit">ADD TO CART</button>
+           </form>
+           <p class="sku">SKU:<span class="sku-span"> NHFL5</span></p>
+           <p class="categories-item">Categories:<span class="categories-item-span">${item.categories[0]}</span></p>
+           <button class="close-modal">Close</button>`;
+           
+            const closeModal=document.querySelector(".close-modal");
+            closeModal.addEventListener("click", ()=>{
+            modal.classList.remove("show-modal");
+            });
+           modalContainer.appendChild(leftSide);       
+           modalContainer.appendChild(rightSide);       
       });
 
       const viewImg=document.createElement("img");
       viewImg.src="./photos/item-hover/eye.svg";
       view.appendChild(viewImg);
 
+     
       const wish = document.createElement("button");
       wish.classList.add("wishlist");
       productBtns.appendChild(wish);
@@ -300,7 +238,132 @@ function showItems(type,location) {
   }
 };
 showItems("Coffee Bean",categItms);
-showItems("Coffee Bean",dealItms);
+
+function showItemsd(location,item) {
+      const product = document.createElement("div");
+      product.classList.add("product-item");
+      product.onmouseover = function () {
+        imgProduct.src = item["photos"][1];
+      };
+      product.onmouseout = function () {
+        imgProduct.src = item["photos"][0];
+      };
+      location.appendChild(product);
+      const imgProduct = document.createElement("img");
+      imgProduct.setAttribute("id", "my-img");
+      imgProduct.src = item["photos"][0];
+      product.appendChild(imgProduct);
+      const productInfo = document.createElement("div");
+      productInfo.classList.add("product-info");
+      product.appendChild(productInfo);
+      const pInfo = document.createElement("a");
+      pInfo.classList.add("info");
+      pInfo.href="item-page.html";
+      
+      pInfo.onclick=()=>{
+        localStorage.setItem("id",item.id);
+        localStorage.setItem("categories",item.categories);
+
+      }
+      
+      pInfo.innerText = item.name;
+      
+      productInfo.appendChild(pInfo);
+      const pPrice = document.createElement("p");
+      pPrice.classList.add("price");
+      pPrice.innerText = `$${item.price}`;
+      productInfo.appendChild(pPrice);
+
+      //
+      const oldPrice = document.createElement("span");
+      oldPrice.classList.add("old-price");
+      function old() {
+        if (item.discount > 0) {
+          oldPrice.innerText = ` $ ` + ((item.discount / 100) * item.price + Number(item.price)).toFixed(2);
+        }
+      };
+      old();
+      pPrice.appendChild(oldPrice);
+      //
+      const discPrice = document.createElement("span");
+      discPrice.classList.add("discount");
+      function disc() {
+        if (item.discount > 0) {
+          discPrice.innerText = `-${item.discount}%`
+        }
+      };
+      disc();
+      pPrice.appendChild(discPrice);
+      //
+      const productBtns = document.createElement("div");
+      productBtns.classList.add("product-btns");
+      productInfo.appendChild(productBtns);
+      const cart = document.createElement("div");
+      cart.classList.add("cart");
+      productBtns.appendChild(cart);
+
+      const cartImg=document.createElement("img");
+      cartImg.src="./photos/item-hover/shopping-basket.svg";
+      cart.appendChild(cartImg);
+      const view = document.createElement("button");
+      view.classList.add("view-modal");
+      productBtns.appendChild(view);
+      view.addEventListener("click",()=>{       
+        modal.classList.add("show-modal"); 
+        const modalContainer=document.querySelector(".modal-content");
+        const leftSide=document.querySelector(".left-side");
+        const rightSide=document.querySelector(".right-side");
+        leftSide.innerHTML=`<img src="${item.photos[0]}" alt="" > `;
+        rightSide.innerHTML=`
+        <h2 class="title-item">${item.name}</h2>
+        <p class="price">$${item.price} <span class="price-discount">${item.discount>0?'$'+((item.discount / 100) * item.price + Number(item.price)).toFixed(2):``}</span></p>
+        <p class="small-description">${item.smallDescription}</p>
+        <p class="stock"><span class="stock-span">${item.stock} </span>in stock</p>
+        <form action="" class="Qty-add-cart">
+            <label for="qty">Qty:</label>
+            <input type="number" name="qty" id="qty" min="1" step="1" max="95"
+            value="1" inputmode="numeric" pattern="[0-9]" >
+            <button type="submit">ADD TO CART</button>
+        </form>
+        <p class="sku">SKU:<span class="sku-span"> NHFL5</span></p>
+        <p class="categories-item">Categories:<span class="categories-item-span">${item.categories[0]}</span></p>
+        <button class="close-modal">Close</button>`;
+        const closeModal=document.querySelector(".close-modal");
+            closeModal.addEventListener("click", ()=>{
+            modal.classList.remove("show-modal");
+            });
+        modalContainer.appendChild(leftSide);       
+        modalContainer.appendChild(rightSide);       
+   });
+
+      const viewImg=document.createElement("img");
+      viewImg.src="./photos/item-hover/eye.svg";
+      view.appendChild(viewImg);
+
+     
+      const wish = document.createElement("button");
+      wish.classList.add("wishlist");
+      productBtns.appendChild(wish);
+
+      const wishImg=document.createElement("img");
+      wishImg.src="./photos/item-hover/heart.svg";
+      wish.appendChild(wishImg);
+    
+  
+};
+function showItemDeals(){
+  let i=0;
+  const dealss=allItems.filter(item => Number(item.discount) > 2);
+  for(const deal of dealss){
+    showItemsd(dealItms,deal);
+    i++;
+    console.log(i);
+    if(i>5 && i<7){
+      break;
+    }
+  }
+}
+showItemDeals()
 
 
 //shopcateg
@@ -377,7 +440,6 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
 
 
 
-
 //BUTTON TO UP PAGE
  window.addEventListener("scroll", ()=>{
    const button=document.querySelector(".button-up-page");
@@ -392,4 +454,3 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
   }
  });
 //BUTTON TO UP PAGE END
-

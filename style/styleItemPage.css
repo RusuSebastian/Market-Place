@@ -1,5 +1,10 @@
 @import url("./style.css");
 @import url("./styleShop.css");
+.item-name-page {
+  color: #b09d7b;
+  font-weight: 600;
+}
+
 body.dark h2,
 body.dark label {
   color: white;
@@ -50,6 +55,7 @@ body.dark .arrow:last-of-type {
   -webkit-box-flex: 0.9;
       -ms-flex: 0.9;
           flex: 0.9;
+  padding: 0px 20px 20px 20px;
 }
 
 .itempage .top-side-item .left-side img {
@@ -59,7 +65,7 @@ body.dark .arrow:last-of-type {
 .itempage .top-side-item .left-side #featured {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 522px;
 }
 
 .itempage .top-side-item .left-side .thumbnail-container {
@@ -76,6 +82,7 @@ body.dark .arrow:last-of-type {
   transition: 1s;
   position: relative;
   width: 25%;
+  height: 120.5px;
 }
 
 .itempage .top-side-item .left-side .thumbnail-container .thumbnail:hover {
@@ -345,5 +352,10 @@ body.dark .arrow:last-of-type {
 
 .deals {
   margin-top: 30px;
+}
+
+#my-img {
+  width: 280px;
+  height: 280px;
 }
 /*# sourceMappingURL=styleItemPage.css.map */
