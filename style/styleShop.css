@@ -75,6 +75,7 @@ body.dark .row a {
 }
 
 .shop-body .filter-side .all-categ .dropdown .categories {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +190,7 @@ body.dark .row a {
   background-color: white;
 }
 
-.shop-body .items-side .pagination button:first-of-type {
+.shop-body .items-side .pagination button:not(:last-of-type) {
   margin-right: 5px;
 }
 
@@ -253,11 +254,6 @@ body.dark .row a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.filter-form input[type="number"]:invalid,
-.filter-form input[type="number"]:out-of-range {
-  border: 1px solid #ff6347;
 }
 
 .filter-form input[type="range"] {

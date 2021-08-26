@@ -73,6 +73,7 @@ body.dark {
 				border: 2px solid $colorc;
 
 				.categories {
+					cursor: pointer;
 					display: flex;
 					align-items: center;
 					text-decoration: none;
@@ -151,7 +152,7 @@ body.dark {
 				border-radius: 5px;
 				color: black;
 				background-color: white;
-				&:first-of-type {
+				&:not(:last-of-type) {
 					margin-right: 5px;
 				}
 			}
@@ -210,10 +211,10 @@ body.dark {
 		font-size: 1em;
 		user-select: none;
 	}
-	input[type="number"]:invalid,
-	input[type="number"]:out-of-range {
-		border: 1px solid #ff6347;
-	}
+	// input[type="number"]:invalid,
+	// input[type="number"]:out-of-range {
+	// 	border: 1px solid #ff6347;
+	// }
 	input[type="range"] {
 		-webkit-appearance: none;
 		width: 100%;

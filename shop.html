@@ -240,15 +240,15 @@
                         Product Categories</p> 
                 </div>
                 <div class="dropdown" >
-                    <a href="" class="categories">
+                    <p class="categories">
                         <img src="./photos/right-arrow.svg" alt=""> Coffee Bean
-                    </a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">Machines</a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">Cup and Glass</a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">Health & Safety</a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">Varieties</a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">Excels Coffee</a>
-                    <a href="" class="categories"><img src="./photos/right-arrow.svg" alt="">More Categories</a>
+                    </p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">Machines</p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">Cup and Glass</p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">Health & Safety</p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">Varieties</p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">Excels Coffee</p>
+                    <p class="categories"><img src="./photos/right-arrow.svg" alt="">All Categories</p>
                 </div>
             </div>
             <div class="filter-price">
@@ -258,9 +258,9 @@
                 <div class="filter-form">
                     <div class="range-slider">
                         <form>
-                        <span>Price:<span>$</span> <input type="number" value="30" min="30" max="150" step="10"> - <input type="number" value="150" min="30" max="150" step="10"></span>
-                        <input value="30" min="30" max="150" step="10" type="range">
-                        <input value="150" min="30" max="150" step="10" type="range">
+                        <span>Price:<span>$</span> <input type="number" value="5" min="5" max="305" step="20"> - <input type="number" value="300" min="5" max="305" step="20"></span>
+                        <input value="5" min="5" max="305" step="20" type="range">
+                        <input value="300" min="5" max="305" step="20" type="range">
                         <button type="submit">FILTER</button>
                         </form>
                     </div>
@@ -380,20 +380,21 @@
                     <div class="button-shop list">
                         <svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path d="m5 0h-4c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h4c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/><path d="m23 0h-14c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h14c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/><path d="m5 9h-4c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h4c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/><path d="m23 9h-14c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h14c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/><path d="m5 18h-4c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h4c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/><path d="m23 18h-14c-.552 0-1 .448-1 1v4c0 .552.448 1 1 1h14c.552 0 1-.448 1-1v-4c0-.552-.448-1-1-1z"/></svg>
                     </div>
-                    <p>Showing <span>1–12</span> of <span>17</span> results</p>
+                    <p>Showing <span class="counter-itms-showed">1–12 of 32</span> results</p>
                 </div>
                 <select name="Default sorting" id="sorting">
-                    <option value="default">Default sorting</option>
-                    <option value="popularity">Sort by popularity</option>
-                    <option value="latest">Sort by latest</option>
+                    <option value="id-asc">Default sorting</option>
+                    <option value="discount-desc">Sort by discounts</option>
+                    <option value="id-desc">Sort by latest</option>
                     <option value="price-asc">Sort by price: low to high</option>
                     <option value="price-desc">Sort by price: high to low</option>
                 </select>
             </div>
             <div class="bot-side"></div>
             <div class="pagination">
-                <button class="current-pag">1</button>
+                <!-- <button class="current-pag">1</button>
                 <button>2</button>
+                <button>3</button> -->
             </div>
         </div>
     </section>
