@@ -18,6 +18,14 @@ body.dark {
 			color: black !important;
 		}
 	}
+	.categories {
+		color: black !important;
+	}
+	.row {
+		p {
+			background-color: $colorc !important;
+		}
+	}
 }
 #my-img {
 	width: 250px;

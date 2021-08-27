@@ -11,6 +11,14 @@ body.dark .row a {
   color: black !important;
 }
 
+body.dark .categories {
+  color: black !important;
+}
+
+body.dark .row p {
+  background-color: #b09d7b !important;
+}
+
 #my-img {
   width: 250px;
   max-height: 250px;
