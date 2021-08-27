@@ -164,7 +164,12 @@ function showItems(categ) {
       info.style.color="#838383";
       info.style.display="none";
       pminiDrisc.appendChild(info);
-
+      if(btnList.classList.contains("activ-shop-view")){
+        product.style.flexDirection="row";
+        productInfo.style.overflow="hidden";
+        productInfo.style.padding="50px";
+        info.style.display="block";
+      }
       const pPrice = document.createElement("p");
       pPrice.classList.add("price");
       pPrice.innerText = `$${item.price}`;
@@ -266,6 +271,9 @@ function createElements(items,items_per_page, page){
       for(const item of paginatedallItems){
       const product = document.createElement("div");
       product.classList.add("product-item");
+
+      
+
       product.onmouseover = function () {
       imgProduct.src = item.photos[1];
 
@@ -305,7 +313,12 @@ function createElements(items,items_per_page, page){
       info.style.color="#838383";
       info.style.display="none";
       pminiDrisc.appendChild(info);
-
+if(btnList.classList.contains("activ-shop-view")){
+        product.style.flexDirection="row";
+        productInfo.style.overflow="hidden";
+        productInfo.style.padding="50px";
+        info.style.display="block";
+      }
       const pPrice = document.createElement("p");
       pPrice.classList.add("price");
       pPrice.innerText = `$${item.price}`;
