@@ -53,8 +53,7 @@ const allItems=[
       "size": "Large",
       "tags": [
         "machine",
-        "fresh beans",
-        "discounts"
+        "fresh beans"
       ]
     },
     {
@@ -108,8 +107,8 @@ const allItems=[
       "size": "Large",
       "tags": [
         "machine",
-        "fresh beans",
-        "discounts"
+        "fresh beans"
+        
       ]
     },
     {
@@ -138,8 +137,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "machine",
-        "fresh beans",
-        "discounts"
+        "fresh beans"
       ]
     },
     {
@@ -198,7 +196,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "fresh beans",
-        "discounts","grinder","organic"
+        "grinder","organic"
       ]
     },
     {
@@ -254,7 +252,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "fresh beans",
-        "discounts","grinder","organic"
+        "grinder","organic"
       ]
     },
     {
@@ -282,7 +280,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "fresh beans",
-        "discounts","grinder","organic"
+        "grinder","organic"
       ]
     },
     {
@@ -310,7 +308,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "fresh beans",
-        "discounts","grinder","organic"
+        "grinder","organic"
       ]
     },
     {
@@ -338,7 +336,7 @@ const allItems=[
       "size": "Small",
       "tags": [
         "fresh beans",
-        "discounts","grinder","organic"
+        "grinder","organic"
       ]
     },
     {
@@ -392,7 +390,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor"
+        "organic","tea","flavor"
       ]
     },
     {
@@ -420,7 +418,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor"
+        "organic","tea","flavor"
       ]
     },
     {
@@ -529,7 +527,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor"
+        "organic","tea","flavor"
       ]
     },
     {
@@ -583,7 +581,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor"
+        "organic","tea","flavor"
       ]
     },
     {
@@ -613,7 +611,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor","cups"
+        "organic","tea","flavor","cups"
       ]
     },   
     {
@@ -671,7 +669,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor","cups"
+        "organic","tea","flavor","cups"
       ]
     },
     {
@@ -758,7 +756,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor","cups"
+        "organic","tea","flavor","cups"
       ]
     },
     {
@@ -816,7 +814,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor","cups"
+        "organic","tea","flavor","cups"
       ]
     },
     {
@@ -903,7 +901,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "discounts","organic","tea","flavor","cups"
+        "organic","tea","flavor","cups"
       ]
     }
     

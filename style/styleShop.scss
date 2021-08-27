@@ -283,8 +283,8 @@ body.dark {
 		padding: 10px;
 		.row {
 			display: flex;
-
-			a {
+			p {
+				cursor: pointer;
 				padding: 10px;
 				background-color: #f2f2f2;
 				color: #838383;
