@@ -48,6 +48,13 @@ categ.onclick = (() => {
   windowClicked(".categories-button",categdrop);
 });
 
+for(const elem of categdrop.children){
+  elem.addEventListener("click",()=>{
+    localStorage.setItem("categsort",elem.innerText);
+    location.href="./shop.html"
+  });
+};
+
 
 function windowClicked (buttonClass,dropdown){
     window.onclick = function (e) {
@@ -439,4 +446,80 @@ function displayItems(item,location) {
 const goToCheckout=document.querySelector(".go-to-cart");
 goToCheckout.addEventListener("click",()=>{
 window.location.href="cart.html";
+});
+
+
+
+
+const searchOption=document.querySelector("#categSearchBar");
+const searchInput=document.querySelector("#searchInput");
+
+let allNames=[];
+searchOption.addEventListener("change",(e)=>{
+const newArr=[];
+const names=[];
+ for(const elem of allItems){
+   if(e.target.value==elem.categories){
+     newArr.push(elem);
+   }
+   if (e.target.value=="All categories"){
+     newArr.push(elem);
+   }
+ } 
+ newArr.forEach(elem =>{
+   names.push(elem.name);
+ });
+ allNames=names;
+ console.log(allNames);
+ localStorage.setItem("categsort",e.target.value);
+});
+
+let allKeys="";
+searchInput.addEventListener("keyup",(e)=>{
+let keys=e.target.value.toLowerCase();
+allKeys=keys;
+});
+
+const searchForm=document.querySelector(".search-Bar");
+searchForm.children[0].addEventListener("submit",(e)=>{
+e.preventDefault();
+//iteram names si verificam daca elementele contin keys
+//daca rezultatul e true adaugam intr-un array numele itemelor 
+//respective, next iteram all items si verificam daca itemele.names
+//contin arrayul respectiv, iar rezultatul se va afisa in fereastra
+//shop.html si categoria respectiva se va activa.
+let names=[];
+for(const elem of allNames){
+  if(elem.toLowerCase().includes(allKeys.toLowerCase())){
+    names.push(elem);
+    // console.log(names);
+  }
+}
+let newItems=[];
+for(const elem of allItems){
+  for(const element of names){
+  if(elem.name.toLowerCase().includes(element.toLowerCase()))
+    {
+      newItems.push(elem);
+    }
+  }
+}
+console.log(newItems);
+
+localStorage.setItem("itmsSearched",JSON.stringify([]));
+let itemsSearch = JSON.parse(localStorage.getItem("itmsSearched"));
+
+for(const el of newItems){
+  itemsSearch.push(el);
+}
+localStorage.setItem("itmsSearched",JSON.stringify(itemsSearch));
+if(itemsSearch==""){
+  alert("No products were found matching your selection.")
+}else{
+  location.href="./shop.html";
+  localStorage.setItem("search",true);
+}
+
+
+
 });

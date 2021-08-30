@@ -106,3 +106,13 @@ btnsdeal[1].addEventListener("click",function(){right_mover(100,200,product)});
 
 //CAROUSELL ITEMS BUTTONS MAIN PAGE END
 
+const imageSlideBtns=document.querySelectorAll(".image-slide-btn");
+imageSlideBtns[1].addEventListener("click",()=>{
+  localStorage.setItem("categsort","Coffee Bean");
+  location.href="./shop.html";
+});
+imageSlideBtns[0].addEventListener("click",()=>{
+  localStorage.setItem("categsort","Health & Safety");
+  location.href="./shop.html";
+});
+

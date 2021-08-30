@@ -816,7 +816,7 @@ window.onload = () => {
   
   
     const keyDirection=localStorage.getItem("filterInput");
-  if(keyDirection!==""){
+    if(keyDirection!== null){
     newArray.sort((a, b) => {
     if (keyDirection.split(",")[1] == "asc") {
       if (Number(a[keyDirection.split(",")[0]]) < Number(b[[keyDirection.split(",")[0]]])) return -1;
@@ -826,7 +826,7 @@ window.onload = () => {
     if (Number(a[keyDirection.split(",")[0]]) < Number(b[[keyDirection.split(",")[0]]])) return 1;
     if (Number(a[keyDirection.split(",")[0]]) > Number(b[[keyDirection.split(",")[0]]])) return -1;
     return 0;
-  });}
+    });}
   
   
     createElements(newArray,row,current_page);
@@ -840,7 +840,7 @@ window.onload = () => {
     productTags(newArray);
     paginationBtns(newArray,current_page);
   
-  if((category==null||keyDirection==null)||(category=="All Categories"))
+  if((category==null&&keyDirection==null)||(category=="All Categories"))
     {
       let newArrayy=allItems;
       const keyDirection=localStorage.getItem("filterInput");
@@ -884,6 +884,24 @@ window.onload = () => {
   
   }
    
+
+  let itemsSearch = JSON.parse(localStorage.getItem("itmsSearched"));
+  let isItemsSearch = JSON.parse(localStorage.getItem("search"));
+  if(itemsSearch!="" && isItemsSearch==true){
+    localStorage.setItem("search",false);
+    createElements(itemsSearch,row,current_page);
+    countItems(itemsSearch);
+    filter(itemsSearch);
+    filterByPrice(itemsSearch);
+    filterByColor(itemsSearch,"color");
+    filterByColor(itemsSearch,"size");
+    spanColor(itemsSearch,"color");
+    spanColor(itemsSearch,"size");
+    productTags(itemsSearch);
+    paginationBtns(itemsSearch,current_page);
+    
+  }
+
   }
 
 
