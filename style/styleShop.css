@@ -52,6 +52,10 @@ body.dark .row p {
   padding-bottom: 40px;
 }
 
+.shop-body .filter-side {
+  width: 330px;
+}
+
 .shop-body .filter-side .all-categ {
   display: -webkit-box;
   display: -ms-flexbox;

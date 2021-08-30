@@ -437,7 +437,7 @@ body.dark .widget-cart .widget-cart-content button {
 .header-top:first-of-type .header-top .kart-section .widget-cart .widget-cart-content .list-cart .item-list-cart .text-widget-cart .link-item {
   text-decoration: none;
   color: black;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .header-top:first-of-type .header-top .kart-section .widget-cart .widget-cart-content .list-cart .item-list-cart .text-widget-cart .link-item:hover {
@@ -446,7 +446,6 @@ body.dark .widget-cart .widget-cart-content button {
 
 .header-top:first-of-type .header-top .kart-section .widget-cart .widget-cart-content .list-cart .item-list-cart .text-widget-cart .amount {
   margin-top: 5px;
-  display: block;
 }
 
 .header-top:first-of-type .header-top .kart-section .widget-cart .widget-cart-content .list-cart .item-list-cart .text-widget-cart .remove-item-list-cart {
@@ -1183,6 +1182,7 @@ li:hover .navbar {
 }
 
 .shop-by-categ .categ-items .categories ul li {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1196,6 +1196,7 @@ li:hover .navbar {
 }
 
 .shop-by-categ .categ-items .categories ul li .svgs {
+  pointer-events: none;
   width: 45px;
   height: 45px;
   margin-right: 10px;
