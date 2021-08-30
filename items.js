@@ -888,7 +888,7 @@ const allItems=[
       ],
       "name": "ETHIOPIA ADOLA NATURAL",
       "price": "12.8",
-      "discount": "0",
+      "discount": "11",
       "smallDescription": " The Robelo family is the third generation growing coffee . Situated in the Isabelia mountain range, the farm growing conditions are ideal for coffee. They started growing Caturras, Pacamaras, and Bourbon, and chose to plant and grow the Java variety as a Microlot for the market Niche of special customers who enjoy the best coffee and are always searching for the best quality profile. ",
       "stock": "474",
       "categories": [
@@ -901,7 +901,7 @@ const allItems=[
       "size": "Small",
       "tags": [
 
-        "organic","tea","flavor","cups"
+        "organic","tea","flavor","cups","discounts"
       ]
     }
     
