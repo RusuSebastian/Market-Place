@@ -107,8 +107,44 @@ reloadP()
 
 
 
+function subtotal(){
+const subTotals=document.querySelectorAll(".item-subtotal");
+const subTotalAll=document.querySelector(".subtotal-all");
+const allitemsPrice=document.querySelector(".total-price-withall");
+let totalmente=0;
+for(const elem of subTotals){
+    totalmente +=Number(elem.textContent.slice("1"));
+}
+subTotalAll.innerHTML=`$ ${totalmente}`;
+allitemsPrice.innerHTML=`$ ${totalmente}`;
+
+document.querySelector("#radiotwo").addEventListener("change",()=>{
+    allitemsPrice.innerHTML=`$ ${Number(subTotalAll.textContent.slice("1"))+5}`;
+})
+document.querySelector("#radione").addEventListener("change",()=>{
+    allitemsPrice.innerHTML=`$ ${Number(subTotalAll.textContent.slice("1"))}`;
+})
 
 
+}
+subtotal();
+
+
+
+const checkout_btn=document.querySelector(".checkout-btn");
+checkout_btn.addEventListener("click",()=>{
+    alert("Thank you for your order!");
+    localStorage.setItem('cart', JSON.stringify([]));
+    window.location.reload();
+});
+
+if(cart==""){
+    document.querySelector(".cart-total").innerHTML="";
+    document.querySelector(".cart-items-form").innerHTML=`
+    <p class="miau" style="text-align:center;font-size:44px;margin-top:50px;">YO, CART IS EMPTY, DO SOMETHING!</p>
+    <p style="text-align:center;font-size:28px;margin:20px 0px 50px 0px;"> Maybe you can go on <span>SHOP section</span> and do some research, just saying </p>
+    `;
+}
 
 
 

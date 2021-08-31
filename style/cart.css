@@ -195,4 +195,29 @@
 .cart-total td {
   border: 1px solid #ebebeb;
 }
+
+.miau {
+  -webkit-animation: mymove 0.1s;
+          animation: mymove 0.1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes mymove {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+  }
+}
+
+@keyframes mymove {
+  from {
+    color: black;
+  }
+  to {
+    color: red;
+  }
+}
 /*# sourceMappingURL=cart.css.map */
