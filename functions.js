@@ -194,27 +194,25 @@ document.querySelector('.my-cart-number').textContent = cartNumbers + ` items`;}
 function removeItemCart(){
 const newcart=[];
 const removeItem = document.getElementsByClassName('remove-item-list-cart')
-for(var i = 0; i < removeItem.length; i++){
-let removeBtn = removeItem[i]
-removeBtn.addEventListener('click', (event) =>{
-let cartItem = JSON.parse(localStorage.getItem('cart'))
-console.log(event.target.parentElement.parentElement.children[1].children[0].textContent);
-cartItem.forEach(item => {
-if(item.name != event.target.parentElement.parentElement.children[1].children[0].textContent){
-   newcart.push(item);
-}
-});
-localStorage.setItem('cart', JSON.stringify(newcart))
-function reloadP() {
-    localStorage.setItem("reloading", "true");
-    window.location.reload();
-}reloadP()
+  for(var i = 0; i < removeItem.length; i++){
+    let removeBtn = removeItem[i]
+    removeBtn.addEventListener('click', (event) =>{
+    let cartItem = JSON.parse(localStorage.getItem('cart'))
+    console.log(event.target.parentElement.parentElement.children[1].children[0].textContent);
+    cartItem.forEach(item => {
+      if(item.name != event.target.parentElement.parentElement.children[1].children[0].textContent){
+        newcart.push(item);
+      }
+    });
+    localStorage.setItem('cart', JSON.stringify(newcart))
+    function reloadP() {
+        localStorage.setItem("reloading", "true");
+        window.location.reload();
+    }reloadP()
 
-
-
-})
-cartModal.classList.add("show");
-}
+    })
+    cartModal.classList.add("show");
+    }
 }
 
 function emptyCart(){
