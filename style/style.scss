@@ -198,7 +198,11 @@ body.dark {
 			color: white;
 			text-decoration: none;
 		}
-
+		p {
+			margin-left: 10px;
+			color: white;
+			cursor: pointer;
+		}
 		&:hover {
 			background-color: #141414;
 		}

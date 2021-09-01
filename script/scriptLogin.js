@@ -35,3 +35,37 @@ Array.from(inputs).map((input) =>{
     });
 });
 
+const forms=document.querySelectorAll("form");
+console.log(forms)
+
+forms[1].addEventListener("submit",(e)=>{
+e.preventDefault();
+const inputs=forms[1].querySelectorAll("input");
+
+if(inputs[1].value==inputs[2].value){
+    localStorage.setItem("username",inputs[0].value);
+    localStorage.setItem("pass",inputs[1].value);
+    inputs[1].style.border="1px solid #ddd";
+    inputs[2].style.border="1px solid #ddd";
+    document.querySelector("section").classList.remove("active");
+    document.querySelector(".container").classList.remove("active");
+    document.querySelector(".pass-error").style.display ="none";
+}else{
+    inputs[1].style.border="1px solid red";
+    inputs[2].style.border="1px solid red";
+    document.querySelector(".pass-error").style.display ="block";
+}
+inputs[0].value=inputs[1].value=inputs[2].value="";           
+});
+
+forms[0].addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const inputs=forms[0].querySelectorAll("input");
+    let usr=localStorage.getItem("username");
+    let pass=localStorage.getItem("pass");
+    if(inputs[0].value==usr && inputs[1].value==pass){
+        location.href="../index.html";
+    }else{
+        document.querySelector(".pass-error").style.display ="block";
+    }
+});

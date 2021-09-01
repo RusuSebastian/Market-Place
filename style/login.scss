@@ -259,3 +259,14 @@ section {
 		padding: 0 30px;
 	}
 }
+
+.pass-error {
+	position: absolute !important;
+	color: red;
+	font-size: 11px;
+	bottom: 39%;
+	display: none;
+}
+.pass-error.log {
+	bottom: 44%;
+}

@@ -21,13 +21,13 @@ function darkMode(){
     }
     darkMode()
 //DARKMODE END
-//
-
+//BURGER MENU
 const burger=document.querySelector(".burger-menu");
 burger.addEventListener("click",()=>{
   burger.children[0].classList.toggle("show");
 })
 //
+
 
 //CART POP UP
 const cartModal=document.getElementsByClassName("widget-cart")[0];
@@ -75,7 +75,21 @@ function windowClicked (buttonClass,dropdown){
   
 //DROP DOWNS END
 
-
+//USERNAME
+let username=localStorage.getItem("username");
+if(username !=""){
+document.querySelector(".account-btn").innerText=username;
+dropdown.innerHTML=` <div class="bar-item">
+<img src="/photos/header/login.svg" alt=""> 
+<p>Sign out</p> 
+</div>`;
+}
+document.querySelector(".bar-item").children[1].addEventListener("click",()=>{
+  localStorage.setItem("username","");
+  localStorage.setItem("pass","");
+  location.href="./login.html";
+})
+//
 //IMG HOVER
 function hover(element, nr) {
   

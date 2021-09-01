@@ -239,6 +239,12 @@ body.dark .widget-cart .widget-cart-content button {
   text-decoration: none;
 }
 
+.dropdown-content .bar-item p {
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
 .dropdown-content .bar-item:hover {
   background-color: #141414;
 }
