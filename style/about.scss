@@ -169,3 +169,19 @@ body {
 		background: black;
 	}
 }
+@media (max-width: 620px) {
+	.about-us .photo-grid {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"poza2"
+			"poza1"
+			"poza3"
+			"poza4";
+	}
+	.numbers .numbers-container {
+		flex-direction: column;
+		.counter-container {
+			padding: 10px;
+		}
+	}
+}

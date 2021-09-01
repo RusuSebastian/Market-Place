@@ -128,3 +128,9 @@ body.dark {
 		}
 	}
 }
+@media (max-width: 620px) {
+	.bot-faq,
+	.faq-cards {
+		flex-direction: column;
+	}
+}

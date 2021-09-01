@@ -227,4 +227,12 @@
   -webkit-transform: rotate(720deg);
           transform: rotate(720deg);
 }
+
+@media (max-width: 620px) {
+  .blogs .container-blogs {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "blog-pic " "blog-info" "blog-info " "blog-pic4 " " blog-pic2 " "quote " "quote" " blog-pic5 " " blog-pic3" " blog-info2 " "blog-info2 " "blog-pic6 ";
+  }
+}
 /*# sourceMappingURL=blog.css.map */

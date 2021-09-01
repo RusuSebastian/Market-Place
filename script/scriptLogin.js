@@ -4,7 +4,6 @@ const icons=[...document.querySelectorAll(".form-icon")];
 const spans=[...document.querySelectorAll(".form-box .top span")];
 const section=document.querySelector("section");
 
-
 spans.map((span) => {
 
     span.addEventListener("click", (e)=>{
@@ -15,7 +14,6 @@ spans.map((span) => {
         
     });
 });
-
 
 Array.from(inputs).map((input) =>{
     icons.forEach((icon)=>{
@@ -36,3 +34,4 @@ Array.from(inputs).map((input) =>{
 
     });
 });
+

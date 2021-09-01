@@ -178,3 +178,21 @@ $linehei: 24px;
 		}
 	}
 }
+@media (max-width: 620px) {
+	.blogs .container-blogs {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"blog-pic "
+			"blog-info"
+			"blog-info "
+			"blog-pic4 "
+			" blog-pic2 "
+			"quote "
+			"quote"
+			" blog-pic5 "
+			" blog-pic3"
+			" blog-info2 "
+			"blog-info2 "
+			"blog-pic6 ";
+	}
+}

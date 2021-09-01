@@ -21,6 +21,13 @@ function darkMode(){
     }
     darkMode()
 //DARKMODE END
+//
+
+const burger=document.querySelector(".burger-menu");
+burger.addEventListener("click",()=>{
+  burger.children[0].classList.toggle("show");
+})
+//
 
 //CART POP UP
 const cartModal=document.getElementsByClassName("widget-cart")[0];

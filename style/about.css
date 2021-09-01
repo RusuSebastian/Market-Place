@@ -214,4 +214,21 @@ body {
 .testimonials-dots .active-dot {
   background: black;
 }
+
+@media (max-width: 620px) {
+  .about-us .photo-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "poza2" "poza1" "poza3" "poza4";
+  }
+  .numbers .numbers-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .numbers .numbers-container .counter-container {
+    padding: 10px;
+  }
+}
 /*# sourceMappingURL=about.css.map */

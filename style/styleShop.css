@@ -364,4 +364,44 @@ body.dark .row p {
 .product-tags .tags .row p:hover {
   color: #b09d7b;
 }
+
+@media (max-width: 1280px) {
+  .shop-body .filter-side .all-categ {
+    width: 300px;
+  }
+  .shop-body .filter-side .product-tags .tags .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1023px) {
+  .shop-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .shop-body .filter-side {
+    margin-top: 20px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
+  }
+  .shop-body .filter-side .all-categ {
+    width: 100%;
+  }
+  .shop-body .items-side .bot-side {
+    -ms-grid-rows: (1fr)[1];
+        grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .items-side .bot-side {
+    -ms-grid-columns: (1fr)[2] !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
 /*# sourceMappingURL=styleShop.css.map */
