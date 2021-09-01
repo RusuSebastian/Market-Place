@@ -1523,7 +1523,15 @@ footer {
 		z-index: 131231;
 		padding: 80px 100px 80px 50px;
 		background: #fff none repeat scroll 0 0;
-
+		animation: animation 0.6s;
+		@keyframes animation {
+			from {
+				right: -230px;
+			}
+			to {
+				right: 0;
+			}
+		}
 		ul {
 			list-style-type: none;
 			li {
