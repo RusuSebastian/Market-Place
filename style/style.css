@@ -109,6 +109,10 @@ body.dark .widget-cart .widget-cart-content button {
   color: red;
 }
 
+body.dark .burger-menu nav ul li a {
+  color: black !important;
+}
+
 .button-up-page {
   display: none;
   cursor: pointer;
