@@ -141,8 +141,8 @@ checkout_btn.addEventListener("click",()=>{
 if(cart==""){
     document.querySelector(".cart-total").innerHTML="";
     document.querySelector(".cart-items-form").innerHTML=`
-    <p class="miau" style="text-align:center;font-size:44px;margin-top:50px;">YO, CART IS EMPTY, DO SOMETHING!</p>
-    <p style="text-align:center;font-size:28px;margin:20px 0px 50px 0px;"> Maybe you can go on <span>SHOP section</span> and do some research, just saying </p>
+    <p class="miau" style="text-align:center;font-size:44px;margin-top:50px;">CART IS EMPTY, DO SOMETHING!</p>
+    <p style="text-align:center;font-size:28px;margin:20px 0px 50px 0px;"> Maybe you can go on <span>SHOP section</span> and do some research </p>
     `;
 }
 
